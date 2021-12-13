@@ -57,9 +57,15 @@
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
                             {% if app.user %}
                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{ path('account') }}">Compte</a>
+                            </li>
+
+                            <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{ path('app_logout') }}">Déconnexion</a>
                             </li>
+
                                 {% else %}
+
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{ path('app_login') }}">Connexion</a>
                             </li>
@@ -101,23 +107,22 @@
                     <div class="item active" style="background-image: url('https://images.unsplash.com/photo-1621998014874-a6edfb5f9bc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80');">
                         <div class="overlay"></div>
                         <div class="carousel-caption">
-                            <h1 class="super-heading">Bootstrap Carousel Guide</h1>
-                            <p class="super-paragraph">This is a demo for the <a href="https://bootstrapious.com/p/bootstrap-carousel">Bootstrap Carousel Guide</a> by Bootstrapious.</p>
+                            <h1 class="super-heading">Publier les entrainements de votre équipe</h1>
+                            <p class="super-paragraph">Détaillez les entrainements et fixez des objectifs</p>
                         </div>
                     </div>
                     <div class="item" style="background-image: url('https://images.unsplash.com/photo-1565078682561-700bdf3cdfcf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');">
                         <div class="overlay"></div>
                         <div class="carousel-caption">
-                            <h1 class="super-heading">Lorem ipsum dolor color</h1>
-                            <p class="super-paragraph">This is a demo for the Bootstrap Carousel Guide.</p>
+                            <h1 class="super-heading">Gestion d'effectifs</h1>
+                            <p class="super-paragraph">Gérer votre effectif pour toute la saison</p>
                         </div>
                     </div>
                     <div class="item" style="background-image: url('https://images.unsplash.com/photo-1480099225005-2513c8947aec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1003&q=80');">
                         <div class="overlay"></div>
                         <div class="carousel-caption">
-                            <h1 class="super-heading">Lorem ipsum dolor color</h1>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae
-                                est. Mauris placerat eleifend leo.</p>
+                            <h1 class="super-heading">Planifier vos rencontres</h1>
+                            <p>Centraliser le calendrier de votre équipe et tous les événements du club sur une seule page</p>
                         </div>
                     </div>
                 </div>
