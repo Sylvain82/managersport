@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccountController!{% endblock %}
+
+{% block body %}
+    <div class="text-center mt-3">
+
+        <h1>Bonjour {{ app.user.firstname }} {{ app.user.lastname }}</h1>
+        <br>
+
+{#        {% if is_granted('ROLE_ADMIN') %}#}
+{#            <h3>You're administrator ➡️<a class="text-decoration-none text-primary" href="admin">  Go to Backoffice ?</a></h3>#}
+{#        {% endif %}#}
+    </div>
+{% endblock %}
