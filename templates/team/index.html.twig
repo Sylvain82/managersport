@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TeamController!{% endblock %}
+
+{% block body %}
+{%  for player in player %}
+    {{ player.name }} <br>
+    {{ player.firstname }} <br>
+
+    {% endfor %}
+{% endblock %}
