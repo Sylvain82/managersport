@@ -4,12 +4,12 @@
 
 {% block body %}
 <h1>Effectif</h1>
+    <div class="container">
 {%  for player in player %}
-    <div class="container d-flex">
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-            <div class="col">
+{#        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">#}
+     <div class="col-md-4 mt-5 mb-3">
                 <div class="card">
                     <div class="card-image-wrapper">
 
@@ -26,10 +26,10 @@
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
-            </div>
+
         </div>
-    </div>
 
     {% endfor %}
 
+    </div>
 {% endblock %}
