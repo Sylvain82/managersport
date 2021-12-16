@@ -3,19 +3,26 @@
 {% block title %}Hello TeamController!{% endblock %}
 
 {% block body %}
+<h1>Effectif</h1>
 {%  for player in player %}
-    <div class="container">
+    <div class="container d-flex">
+
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
             <div class="col">
                 <div class="card">
                     <div class="card-image-wrapper">
-                        <img src="https://www.ligue2.fr/-/media/Project/LFP/shared/Images/Players/2021-2022/29031.jpg" class="card-img-top img-fluid" alt="...">
-                    </div>
+
+                        {% if player.photo %}
+                        <img src="/img/{{ player.photo }}" class="card-img-top img-fluid" alt="...">
+                    {% else %}
+                        <img src="/img/vide.png" class="card-img-top img-fluid" alt="...">
+                    {% endif %}
+                        </div>
 
                     <div class="card-body">
-                       <h5 class="card-title">{{ player.name }} {{ player.firstname }}</h5>
-                        <p class="card-text">{{ player.position }}</p>
+                       <h2 class="card-title">{{ player.name }} {{ player.firstname }}</h2>
+                        <h5 class="card-text">{{ player.position }}</h5>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
