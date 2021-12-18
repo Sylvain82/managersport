@@ -52,6 +52,26 @@ class Player
      */
     private $photo;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $licence;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $dateNaissance;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $AdressePostale;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $genre;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -140,6 +160,54 @@ class Player
     public function setPhoto(?string $photo): self
     {
         $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getLicence(): ?string
+    {
+        return $this->licence;
+    }
+
+    public function setLicence(?string $licence): self
+    {
+        $this->licence = $licence;
+
+        return $this;
+    }
+
+    public function getDateNaissance(): ?\DateTimeInterface
+    {
+        return $this->dateNaissance;
+    }
+
+    public function setDateNaissance(?\DateTimeInterface $dateNaissance): self
+    {
+        $this->dateNaissance = $dateNaissance;
+
+        return $this;
+    }
+
+    public function getAdressePostale(): ?string
+    {
+        return $this->AdressePostale;
+    }
+
+    public function setAdressePostale(?string $AdressePostale): self
+    {
+        $this->AdressePostale = $AdressePostale;
+
+        return $this;
+    }
+
+    public function getGenre(): ?string
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(?string $genre): self
+    {
+        $this->genre = $genre;
 
         return $this;
     }
