@@ -849,31 +849,31 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>5</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="252" parent="241" name="team">
+    <column id="252" parent="241" name="position">
       <Position>6</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="253" parent="241" name="position">
-      <Position>7</Position>
       <DataType>varchar(30)|0s</DataType>
     </column>
-    <column id="254" parent="241" name="photo">
+    <column id="253" parent="241" name="photo">
+      <Position>7</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="254" parent="241" name="licence">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="255" parent="241" name="licence">
+    <column id="255" parent="241" name="date_naissance">
       <Position>9</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="256" parent="241" name="date_naissance">
-      <Position>10</Position>
       <DataType>date|0s</DataType>
     </column>
-    <column id="257" parent="241" name="adresse_postale">
+    <column id="256" parent="241" name="adresse_postale">
+      <Position>10</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="257" parent="241" name="genre">
       <Position>11</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="258" parent="241" name="genre">
+    <column id="258" parent="241" name="team">
       <Position>12</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
