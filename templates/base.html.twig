@@ -80,6 +80,12 @@
                             </li>
                             {% endif %}
 
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="admin">Admin</a>
+                                </li>
+                            {% endif %}
+
 {#                        </ul>#}
 {#                        <form class="d-flex">#}
 {#                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">#}

@@ -21,9 +21,13 @@
                         </div>
 
                     <div class="card-body">
-                       <h2 class="card-title">{{ player.name }} {{ player.firstname }}</h2>
+                       <h2 class="card-title">{{ player.name }} <br> {{ player.firstname }}</h2>
                         <h5 class="card-text">{{ player.position }}</h5>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-text">Licence : {{ player.licence }}</h5>
+                        <h5 class="card-text">Equipe : {{ player.team }}</h5>
+                        <h5 class="card-text">Tél : {{ player.phone }}</h5>
+
+                        <a href="#" class="btn btn-primary">Fiche</a>
                     </div>
                 </div>
 
