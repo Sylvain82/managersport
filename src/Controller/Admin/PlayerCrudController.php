@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Player;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -23,13 +24,16 @@ class PlayerCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             TextField::new('firstname'),
-            EmailField::new('email'),
+            AssociationField::new('team'),
             TelephoneField::new('phone'),
+            TextField::new('licence'),
+            EmailField::new('email'),
             TextField::new('position'),
             ImageField::new('photo')->setBasePath('img/')
                 ->setUploadDir('public/img/')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired('false'),
+            TextField::new('adressePostale'),
         ];
     }
 

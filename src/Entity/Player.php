@@ -37,10 +37,7 @@ class Player
      */
     private $phone;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $team;
+
 
     /**
      * @ORM\Column(type="string", length=30, nullable=true)
@@ -71,6 +68,13 @@ class Player
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $genre;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Equipe::class, inversedBy="players")
+     */
+    private $team;
+
+
 
     public function getId(): ?int
     {
@@ -124,18 +128,6 @@ class Player
     public function setPhone(?string $phone): self
     {
         $this->phone = $phone;
-
-        return $this;
-    }
-
-    public function getTeam(): ?string
-    {
-        return $this->team;
-    }
-
-    public function setTeam(?string $team): self
-    {
-        $this->team = $team;
 
         return $this;
     }
@@ -211,4 +203,19 @@ class Player
 
         return $this;
     }
+
+
+    public function getTeam(): ?Equipe
+    {
+        return $this->team;
+    }
+
+    public function setTeam(?Equipe $team): self
+    {
+        $this->team = $team;
+
+        return $this;
+    }
+
+
 }
