@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Competition;
 use App\Entity\Equipe;
 use App\Entity\Player;
 use App\Entity\User;
@@ -33,5 +34,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('User', 'fas fa-users', User::class);
         yield MenuItem::linkToCrud('Players', 'fas fa-running', Player::class);
         yield MenuItem::linkToCrud('Equipes', 'fas fa-running', Equipe::class);
+        yield MenuItem::linkToCrud('Compétitions', 'fas fa-trophy', Competition::class);
     }
 }
