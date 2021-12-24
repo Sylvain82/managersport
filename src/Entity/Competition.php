@@ -42,6 +42,11 @@ class Competition
      */
     private $lieu;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Equipe::class, inversedBy="competitions")
+     */
+    private $equipe;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,10 @@ class Competition
         $this->heure = $heure;
 
         return $this;
+    }
+
+    public function __toString() {
+        return $this->getType();
     }
 
     public function getType(): ?string
@@ -103,6 +112,18 @@ class Competition
     public function setLieu(?string $lieu): self
     {
         $this->lieu = $lieu;
+
+        return $this;
+    }
+
+    public function getEquipe(): ?Equipe
+    {
+        return $this->equipe;
+    }
+
+    public function setEquipe(?Equipe $equipe): self
+    {
+        $this->equipe = $equipe;
 
         return $this;
     }

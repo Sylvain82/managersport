@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Equipe;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class EquipeCrudController extends AbstractCrudController
@@ -19,6 +20,8 @@ class EquipeCrudController extends AbstractCrudController
         return [
             TextField::new('nom'),
             TextField::new('division'),
+            AssociationField::new('competitions')
+
         ];
     }
 
