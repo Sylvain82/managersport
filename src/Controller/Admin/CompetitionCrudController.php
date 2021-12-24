@@ -6,6 +6,7 @@ use App\Entity\Competition;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Twig\Extensions\DateExtension;
 
 
 class CompetitionCrudController extends AbstractCrudController
@@ -19,8 +20,10 @@ class CompetitionCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('date'),
+
             TextField::new('type'),
+            TextField::new('date'),
+            TextField::new('lieu'),
 
         ];
     }

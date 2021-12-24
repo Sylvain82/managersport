@@ -18,7 +18,7 @@ class Competition
     private $id;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $date;
 
@@ -32,29 +32,39 @@ class Competition
      */
     private $type;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $event;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $lieu;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): ?string
     {
         return $this->date;
     }
 
-    public function setDate(?\DateTimeInterface $date): self
+    public function setDate(?string $date): self
     {
         $this->date = $date;
 
         return $this;
     }
 
-    public function getHeure(): ?\DateTimeInterface
+    public function getHeure(): ?string
     {
         return $this->heure;
     }
 
-    public function setHeure(?\DateTimeInterface $heure): self
+    public function setHeure(?string $heure): self
     {
         $this->heure = $heure;
 
@@ -69,6 +79,30 @@ class Competition
     public function setType(?string $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getEvent(): ?string
+    {
+        return $this->event;
+    }
+
+    public function setEvent(?string $event): self
+    {
+        $this->event = $event;
+
+        return $this;
+    }
+
+    public function getLieu(): ?string
+    {
+        return $this->lieu;
+    }
+
+    public function setLieu(?string $lieu): self
+    {
+        $this->lieu = $lieu;
 
         return $this;
     }
