@@ -7,10 +7,9 @@ use Couchbase\BooleanFieldSearchQuery;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use Symfony\Component\Config\Definition\BooleanNode;
-use Twig\Extensions\DateExtension;
+
 
 
 class CompetitionCrudController extends AbstractCrudController
@@ -25,8 +24,8 @@ class CompetitionCrudController extends AbstractCrudController
     {
         return [
 
+            DateTimeField::new('heureBis'),
             TextField::new('type'),
-            TextField::new('date'),
             TextField::new('lieu'),
             BooleanField::new('afficher'),
             AssociationField::new('equipe'),

@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\CompetitionRepository;
 use Doctrine\ORM\Mapping as ORM;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * @ORM\Entity(repositoryClass=CompetitionRepository::class)
@@ -18,7 +20,7 @@ class Competition
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $date;
 
@@ -48,21 +50,14 @@ class Competition
      */
     private $afficher;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $heureBis;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getDate(): ?string
-    {
-        return $this->date;
-    }
-
-    public function setDate(?string $date): self
-    {
-        $this->date = $date;
-
-        return $this;
     }
 
     public function __toString() {
@@ -125,6 +120,19 @@ class Competition
     public function setAfficher(bool $afficher): self
     {
         $this->afficher = $afficher;
+
+        return $this;
+    }
+
+
+    public function getHeureBis(): ?\DateTimeInterface
+    {
+        return $this->heureBis;
+    }
+
+    public function setHeureBis(?\DateTimeInterface $heureBis): self
+    {
+        $this->heureBis = $heureBis;
 
         return $this;
     }
