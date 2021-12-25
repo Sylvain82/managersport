@@ -22,10 +22,6 @@ class Competition
      */
     private $date;
 
-    /**
-     * @ORM\Column(type="time", nullable=true)
-     */
-    private $heure;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -47,6 +43,11 @@ class Competition
      */
     private $equipe;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $afficher;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,18 +61,6 @@ class Competition
     public function setDate(?string $date): self
     {
         $this->date = $date;
-
-        return $this;
-    }
-
-    public function getHeure(): ?string
-    {
-        return $this->heure;
-    }
-
-    public function setHeure(?string $heure): self
-    {
-        $this->heure = $heure;
 
         return $this;
     }
@@ -124,6 +113,18 @@ class Competition
     public function setEquipe(?Equipe $equipe): self
     {
         $this->equipe = $equipe;
+
+        return $this;
+    }
+
+    public function getAfficher(): ?bool
+    {
+        return $this->afficher;
+    }
+
+    public function setAfficher(bool $afficher): self
+    {
+        $this->afficher = $afficher;
 
         return $this;
     }

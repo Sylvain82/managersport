@@ -9,7 +9,7 @@
     <div class="container">
 
         {%  for calendrier in calendrier %}
-
+        {%  if (calendrier.afficher) %}
             <div class="col-md-4 mt-5 mb-3">
                 <div class="card">
 
@@ -22,7 +22,7 @@
                 </div>
 
             </div>
-
+        {% endif %}
         {% endfor %}
 
     </div>
