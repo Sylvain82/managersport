@@ -821,31 +821,30 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="246" parent="240" name="date">
+    <column id="246" parent="240" name="type">
       <Position>2</Position>
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="247" parent="240" name="type">
+    <column id="247" parent="240" name="event">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="248" parent="240" name="event">
+    <column id="248" parent="240" name="lieu">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="249" parent="240" name="lieu">
+    <column id="249" parent="240" name="equipe_id">
       <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="250" parent="240" name="equipe_id">
-      <Position>6</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="251" parent="240" name="afficher">
-      <Position>7</Position>
+    <column id="250" parent="240" name="afficher">
+      <Position>6</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
+    </column>
+    <column id="251" parent="240" name="heure_bis">
+      <Position>7</Position>
+      <DataType>datetime|0s</DataType>
     </column>
     <index id="252" parent="240" name="IDX_B50A2CB16D861B89">
       <ColNames>equipe_id</ColNames>

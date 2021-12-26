@@ -19,11 +19,6 @@ class Competition
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $date;
-
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -61,7 +56,9 @@ class Competition
     }
 
     public function __toString() {
-        return $this->getType();
+
+        return $this->getType() AND
+         $this->getHeureBis()->format('Y-m-d H:i:s');
     }
 
     public function getType(): ?string
@@ -123,7 +120,6 @@ class Competition
 
         return $this;
     }
-
 
     public function getHeureBis(): ?\DateTimeInterface
     {
