@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ResultatController!{% endblock %}
+
+{% block body %}
+    <h1>Résultats</h1>
+
+    {% for resultat in resultat %}
+        <div class="col-md-4 mt-5 mb-3">
+            <div class="card">
+
+                <div class="card-body">
+                    <h2 class="card-title">{{ resultat.type }}
+                    <h2 class="card-title">{{ resultat.equipe }}
+                    <h3 class="card-title">{{ resultat.heureBis.format('d-m-Y à H:i') }}
+                    <h4 class="card-title">{{ resultat.score }}
+                    <h4 class="card-title">{{ resultat.lieu }}
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

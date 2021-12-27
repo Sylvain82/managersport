@@ -50,6 +50,11 @@ class Competition
      */
     private $heureBis;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $score;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -129,6 +134,18 @@ class Competition
     public function setHeureBis(?\DateTimeInterface $heureBis): self
     {
         $this->heureBis = $heureBis;
+
+        return $this;
+    }
+
+    public function getScore(): ?string
+    {
+        return $this->score;
+    }
+
+    public function setScore(?string $score): self
+    {
+        $this->score = $score;
 
         return $this;
     }

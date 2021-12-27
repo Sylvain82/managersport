@@ -28,6 +28,7 @@ class CompetitionCrudController extends AbstractCrudController
             TextField::new('type'),
             TextField::new('lieu'),
             BooleanField::new('afficher'),
+            TextField::new('score'),
             AssociationField::new('equipe'),
 
         ];
