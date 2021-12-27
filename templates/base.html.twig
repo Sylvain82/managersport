@@ -57,7 +57,9 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
                             {% if app.user %}
+
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{ path('account') }}">Compte</a>
                             </li>
@@ -277,6 +279,7 @@
                 <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
             </footer>
         </main>
+{% endblock %}
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
@@ -285,5 +288,4 @@
 
 </html>
 
-{% endblock %}
 

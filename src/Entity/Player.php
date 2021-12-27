@@ -72,7 +72,7 @@ class Player
     /**
      * @ORM\ManyToOne(targetEntity=Equipe::class, inversedBy="players")
      */
-    private $team;
+    private $selection;
 
 
 
@@ -204,18 +204,18 @@ class Player
         return $this;
     }
 
-
-    public function getTeam(): ?Equipe
+    public function getSelection(): ?Equipe
     {
-        return $this->team;
+        return $this->selection;
     }
 
-    public function setTeam(?Equipe $team): self
+    public function setSelection(?Equipe $selection): self
     {
-        $this->team = $team;
+        $this->selection = $selection;
 
         return $this;
     }
+
 
 
 }

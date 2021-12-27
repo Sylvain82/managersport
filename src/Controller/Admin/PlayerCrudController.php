@@ -3,8 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Player;
+use Doctrine\Common\Collections\Selectable;
+use Doctrine\ORM\Query\AST\SimpleSelectExpression;
+use Doctrine\ORM\Query\Expr\Select;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -24,7 +28,7 @@ class PlayerCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             TextField::new('firstname'),
-            AssociationField::new('team'),
+            AssociationField::new('selection'),
             TelephoneField::new('phone'),
             TextField::new('licence'),
             EmailField::new('email'),
@@ -36,5 +40,4 @@ class PlayerCrudController extends AbstractCrudController
             TextField::new('adressePostale'),
         ];
     }
-
 }

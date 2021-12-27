@@ -29,20 +29,21 @@ class Equipe
      */
     private $division;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Player::class, mappedBy="team")
-     */
-    private $players;
 
     /**
      * @ORM\OneToMany(targetEntity=Competition::class, mappedBy="equipe")
      */
     private $competitions;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Player::class, mappedBy="selection")
+     */
+    private $players;
+
     public function __construct()
     {
-        $this->players = new ArrayCollection();
         $this->competitions = new ArrayCollection();
+        $this->players = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -79,35 +80,6 @@ class Equipe
         return $this;
     }
 
-    /**
-     * @return Collection|Player[]
-     */
-    public function getPlayers(): Collection
-    {
-        return $this->players;
-    }
-
-    public function addPlayer(Player $player): self
-    {
-        if (!$this->players->contains($player)) {
-            $this->players[] = $player;
-            $player->setTeam($this);
-        }
-
-        return $this;
-    }
-
-    public function removePlayer(Player $player): self
-    {
-        if ($this->players->removeElement($player)) {
-            // set the owning side to null (unless already changed)
-            if ($player->getTeam() === $this) {
-                $player->setTeam(null);
-            }
-        }
-
-        return $this;
-    }
 
     /**
      * @return Collection|Competition[]
@@ -133,6 +105,36 @@ class Equipe
             // set the owning side to null (unless already changed)
             if ($competition->getEquipe() === $this) {
                 $competition->setEquipe(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Player[]
+     */
+    public function getPlayers(): Collection
+    {
+        return $this->players;
+    }
+
+    public function addPlayer(Player $player): self
+    {
+        if (!$this->players->contains($player)) {
+            $this->players[] = $player;
+            $player->setSelection($this);
+        }
+
+        return $this;
+    }
+
+    public function removePlayer(Player $player): self
+    {
+        if ($this->players->removeElement($player)) {
+            // set the owning side to null (unless already changed)
+            if ($player->getSelection() === $this) {
+                $player->setSelection(null);
             }
         }
 
