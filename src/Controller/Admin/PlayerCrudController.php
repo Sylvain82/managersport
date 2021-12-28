@@ -14,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\Validator\Constraints\Choice;
 
 class PlayerCrudController extends AbstractCrudController
 {
@@ -26,6 +27,7 @@ class PlayerCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+
             TextField::new('name'),
             TextField::new('firstname'),
             AssociationField::new('selection'),

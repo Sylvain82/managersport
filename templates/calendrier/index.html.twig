@@ -10,19 +10,20 @@
 
         {%  for calendrier in calendrier %}
         {%  if (calendrier.afficher) %}
+
             <div class="col-md-4 mt-5 mb-3">
                 <div class="card">
 
                     <div class="card-body">
                         <h2 class="card-title">{{ calendrier.type }}
-                        <h2 class="card-title">{{ calendrier.equipe }}
-                        <h3 class="card-title">{{ calendrier.heureBis.format('d-m-Y à H:i') }}
-                        <h4 class="card-title">{{ calendrier.lieu }}
-
+                        <h2 class="card-title">{{ calendrier.equipe }} - {{ calendrier.adversaire }}
+                        <h3 class="card-title">{{ calendrier.heureBis.format('d-m-Y à H:i') }} <br>
+                            <a href="{{ calendrier.lieu }}" class="card-title">{{ calendrier.stade }}</a>
                     </div>
                 </div>
 
             </div>
+
         {% endif %}
         {% endfor %}
 

@@ -55,6 +55,16 @@ class Competition
      */
     private $score;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $stade;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $adversaire;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -146,6 +156,30 @@ class Competition
     public function setScore(?string $score): self
     {
         $this->score = $score;
+
+        return $this;
+    }
+
+    public function getStade(): ?string
+    {
+        return $this->stade;
+    }
+
+    public function setStade(?string $stade): self
+    {
+        $this->stade = $stade;
+
+        return $this;
+    }
+
+    public function getAdversaire(): ?string
+    {
+        return $this->adversaire;
+    }
+
+    public function setAdversaire(string $adversaire): self
+    {
+        $this->adversaire = $adversaire;
 
         return $this;
     }
