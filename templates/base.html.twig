@@ -51,7 +51,7 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{{ path('home') }}">Home</a>
+                    <a class="navbar-brand" href="{{ path('home') }}">Accueil</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -64,9 +64,6 @@
                                 <a class="nav-link active" aria-current="page" href="{{ path('account') }}">Compte</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{{ path('app_logout') }}">Déconnexion</a>
-                            </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="{{ path('team') }}">Effectif</a>
@@ -78,6 +75,10 @@
 
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="{{ path('resultat') }}">Résultats</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link active float-end" aria-current="page" href="{{ path('app_logout') }}">Déconnexion</a>
                                 </li>
 
                                 {% else %}
@@ -129,24 +130,33 @@
                     <div class="item active" style="background-image: url('https://images.unsplash.com/photo-1621998014874-a6edfb5f9bc7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80');">
                         <div class="overlay"></div>
                         <div class="carousel-caption">
-                            <h1 class="super-heading">Publier les entrainements de votre équipe</h1>
-                            <p class="super-paragraph">Détaillez les entrainements et fixez des objectifs</p>
+                            <a style="color: white" href="{{ path('calendrier') }}">
+                            <h1 class="super-heading">LE CALENDRIER COMPLET</h1>
+                            <p>Le calendrier de votre équipe et tous les événements du club</p>
+                            </a>
+
                         </div>
                     </div>
                     <div class="item" style="background-image: url('https://images.unsplash.com/photo-1565078682561-700bdf3cdfcf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');">
                         <div class="overlay"></div>
                         <div class="carousel-caption">
-                            <h1 class="super-heading">Gestion d'effectifs</h1>
-                            <p class="super-paragraph">Gérer votre effectif pour toute la saison</p>
+                            
+                            <a style="color: white" href="{{ path('team') }}">
+                            <h1 class="super-heading">LES EFFECTIFS</h1>
+                            <p class="super-paragraph">L'effectif complet de votre club</p>
+                            </a>
+
                         </div>
-                    </div>
-                    <div class="item" style="background-image: url('https://images.unsplash.com/photo-1480099225005-2513c8947aec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1003&q=80');">
-                        <div class="overlay"></div>
-                        <div class="carousel-caption">
-                            <h1 class="super-heading">Planifier vos rencontres</h1>
-                            <p>Centraliser le calendrier de votre équipe et tous les événements du club sur une seule page</p>
                         </div>
-                    </div>
+                        <div class="item" style="background-image: url('https://images.unsplash.com/photo-1480099225005-2513c8947aec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1003&q=80');">
+                            <div class="overlay"></div>
+                            <div class="carousel-caption">
+                                <a style="color: white" href="{{ path('resultat') }}">
+                                <h1 class="super-heading">LES RESULTATS</h1>
+                                <p>Le calendrier de votre équipe et tous les événements du club</p>
+                                </a>  
+                            </div>
+                        </div>
                 </div>
 
                 <!-- Controls -->
