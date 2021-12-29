@@ -72,9 +72,12 @@ class Player
     /**
      * @ORM\ManyToOne(targetEntity=Equipe::class, inversedBy="players")
      */
-    private $selection;
+    private $equipe;
 
-
+    public function __toString():string
+    {
+        return $this->equipe;
+    }
 
     public function getId(): ?int
     {
@@ -176,7 +179,6 @@ class Player
     public function setDateNaissance(?\DateTimeInterface $dateNaissance): self
     {
         $this->dateNaissance = $dateNaissance;
-
         return $this;
     }
 
@@ -204,18 +206,16 @@ class Player
         return $this;
     }
 
-    public function getSelection(): ?Equipe
+    public function getEquipe(): ?Equipe
     {
-        return $this->selection;
+        return $this->equipe;
     }
 
-    public function setSelection(?Equipe $selection): self
+    public function setEquipe(?Equipe $equipe): self
     {
-        $this->selection = $selection;
+        $this->equipe = $equipe;
 
         return $this;
     }
-
-
 
 }

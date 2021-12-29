@@ -29,22 +29,16 @@ class Equipe
      */
     private $division;
 
-
     /**
-     * @ORM\OneToMany(targetEntity=Competition::class, mappedBy="equipe")
-     */
-    private $competitions;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Player::class, mappedBy="selection")
+     * @ORM\OneToMany(targetEntity=Player::class, mappedBy="equipe")
      */
     private $players;
 
     public function __construct()
     {
-        $this->competitions = new ArrayCollection();
         $this->players = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {
@@ -80,37 +74,6 @@ class Equipe
         return $this;
     }
 
-
-    /**
-     * @return Collection|Competition[]
-     */
-    public function getCompetitions(): Collection
-    {
-        return $this->competitions;
-    }
-
-    public function addCompetition(Competition $competition): self
-    {
-        if (!$this->competitions->contains($competition)) {
-            $this->competitions[] = $competition;
-            $competition->setEquipe($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCompetition(Competition $competition): self
-    {
-        if ($this->competitions->removeElement($competition)) {
-            // set the owning side to null (unless already changed)
-            if ($competition->getEquipe() === $this) {
-                $competition->setEquipe(null);
-            }
-        }
-
-        return $this;
-    }
-
     /**
      * @return Collection|Player[]
      */
@@ -123,7 +86,7 @@ class Equipe
     {
         if (!$this->players->contains($player)) {
             $this->players[] = $player;
-            $player->setSelection($this);
+            $player->setEquipe($this);
         }
 
         return $this;
@@ -133,11 +96,13 @@ class Equipe
     {
         if ($this->players->removeElement($player)) {
             // set the owning side to null (unless already changed)
-            if ($player->getSelection() === $this) {
-                $player->setSelection(null);
+            if ($player->getEquipe() === $this) {
+                $player->setEquipe(null);
             }
         }
 
         return $this;
     }
+
+
 }

@@ -20,10 +20,7 @@ class EquipeCrudController extends AbstractCrudController
         return [
             TextField::new('nom'),
             TextField::new('division'),
-            AssociationField::new('competitions'),
-
-
-
+            AssociationField::new('players')
         ];
     }
 

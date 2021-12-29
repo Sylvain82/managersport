@@ -27,10 +27,9 @@ class PlayerCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-
             TextField::new('name'),
             TextField::new('firstname'),
-            AssociationField::new('selection'),
+            AssociationField::new('equipe'),
             TelephoneField::new('phone'),
             TextField::new('licence'),
             EmailField::new('email'),

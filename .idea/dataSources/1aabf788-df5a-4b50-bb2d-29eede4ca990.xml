@@ -947,78 +947,91 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="274" parent="243" name="date_naissance">
+    <column id="274" parent="243" name="adresse_postale">
       <Position>9</Position>
-      <DataType>date|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="275" parent="243" name="adresse_postale">
+    <column id="275" parent="243" name="genre">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="276" parent="243" name="genre">
+    <column id="276" parent="243" name="selection_id">
       <Position>11</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="277" parent="243" name="selection_id">
-      <Position>12</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <index id="278" parent="243" name="IDX_98197A65E48EFE78">
+    <column id="277" parent="243" name="date_naissance">
+      <Position>12</Position>
+      <DataType>date|0s</DataType>
+    </column>
+    <column id="278" parent="243" name="equipe_id">
+      <Position>13</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <index id="279" parent="243" name="IDX_98197A65E48EFE78">
       <ColNames>selection_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="279" parent="243" name="PRIMARY">
+    <index id="280" parent="243" name="IDX_98197A656D861B89">
+      <ColNames>equipe_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="281" parent="243" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="280" parent="243" name="FK_98197A65E48EFE78">
+    <foreign-key id="282" parent="243" name="FK_98197A65E48EFE78">
       <ColNames>selection_id</ColNames>
       <RefTableName>equipe</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="281" parent="244" name="id">
+    <foreign-key id="283" parent="243" name="FK_98197A656D861B89">
+      <ColNames>equipe_id</ColNames>
+      <RefTableName>equipe</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="284" parent="244" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="282" parent="244" name="email">
+    <column id="285" parent="244" name="email">
       <Position>2</Position>
       <DataType>varchar(180)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="283" parent="244" name="roles">
+    <column id="286" parent="244" name="roles">
       <Position>3</Position>
       <DataType>json|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="284" parent="244" name="password">
+    <column id="287" parent="244" name="password">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="285" parent="244" name="firstname">
+    <column id="288" parent="244" name="firstname">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="286" parent="244" name="lastname">
+    <column id="289" parent="244" name="lastname">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="287" parent="244" name="UNIQ_8D93D649E7927C74">
+    <index id="290" parent="244" name="UNIQ_8D93D649E7927C74">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="288" parent="244" name="PRIMARY">
+    <key id="291" parent="244" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="289" parent="244" name="UNIQ_8D93D649E7927C74">
+    <key id="292" parent="244" name="UNIQ_8D93D649E7927C74">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>UNIQ_8D93D649E7927C74</UnderlyingIndexName>
     </key>
