@@ -89,6 +89,10 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('register') }}">Inscription</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('media') }}">Médias</a>
+                            </li>
+
                             {% endif %}
 
                             {% if is_granted('ROLE_ADMIN') %}
@@ -173,31 +177,40 @@
             <div class="container demo-content">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>Some dummy demo content</h1>
+                        <h1>Le Club</h1>
+                        <blockquote>
 
-                        <p class="lead">This is a demo for the <a href="https://bootstrapious.com/p/bootstrap-carousel">Bootstrap Carousel Guide</a> by Bootstrapious.</p>
+                       <p>Le Toulouse Football Club, abrégé en Toulouse FC ou TFC, est un club de football français fondé en 1970 et basé à Toulouse.
+                           <br>
+                           L'équipe première évolue au sein de la Ligue 2 depuis la saison 2020-2021 après 17 saisons en Ligue 1. Le club est présidé par Damien Comolli depuis le 20 juillet 2020 et est entraîné par Philippe Montanier depuis le 23 juin 2021.
+                           <br>
 
-                        <p class="lead"><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em>          Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum
-                            orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-
-                        <h2>Header Level 2</h2>
-
-                        <ol>
-                            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                            <li>Aliquam tincidunt mauris eu risus.</li>
-                        </ol>
+                           Contrairement à ce que prétend une campagne de communication lancée par le club en 2017, le Toulouse FC n'a pas été fondé en 1937. Il y a un amalgame fait avec le premier Toulouse FC, qui a disparu en 1967. Les deux clubs n'ont pas de rapport, le Toulouse FC actuel ayant de surcroît été fondé en 1970 sous le nom d'Union sportive de Toulouse.
+                           <br>
+                           Ce dernier reçoit à sa création le soutien de la mairie, qui lui propose de jouer au Stadium municipal, et de la Fédération française de football, qui l'intègre parmi les clubs choisis pour accéder directement à la nouvelle Division 2 ouverte aux clubs amateurs pour la saison 1970-1971 lors de la réforme des championnats de 1970.
+                           <br>
+                           En 1979, l'US Toulouse prend le nom de Toulouse FC et adopte le statut professionnel.
+                           <br>
+                           Il intègre la Division 1 en 1982 et termine dans la foulée à trois reprises dans les cinq premières places du championnat. Le Toulouse FC découvre la Coupe d'Europe en 1986, où il élimine notamment le SSC Naples de Diego Maradona.
+                           <br>
+                           Les années 1990 sont plus difficiles, avec trois relégations sportives en Division 2 en 1994, 1999 et 2001, année du dépôt de bilan du club.
+                           <br>
+                           Reparti en National en 2001-2002, le club retrouve l'élite dès 2003. Il termine à la 3e place en 2007, qualificative pour le tour préliminaire de la Ligue des champions.
+                           <br>
+                           Après plusieurs saisons où le club joue le ventre mou de la Ligue 1, il sauve sa place in extremis à de nombreuses reprises entre 2014 et 2020, année où le club redescend finalement en Ligue 2.</p>
+                        </blockquote>
+                        <h2>Le Stade</h2>
 
                         <blockquote>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus
-                                turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+                            <p>Le Stadium est le stade où évolue le Toulouse Football Club depuis sa création en 1970. Inauguré en 1937 pour accueillir la Coupe du monde de football 1938 organisée en France, il connaît plusieurs réfections en 1949 puis à l'occasion de la Coupe du monde 1998. Le Stadium devient ainsi le sixième stade de France en termes de places disponibles, derrière le Stade de la Beaujoire, avec une capacité de 35 472 spectateurs.
+                                <br>
+                                En raison des dégâts subis lors de l'explosion de l'usine AZF de Toulouse, le Toulouse FC a disputé une grande partie de la saison 2001-2002 au stade Ernest-Wallon, où évolue le Stade toulousain.
+                                <br>
+                                Ne faisant pas partie des stades français évalués par l'UEFA au rang de stades quatre ou cinq étoiles, le Stadium est l'objet d'une rénovation en vue du Championnat d'Europe de football 2016. Financés par la ville de Toulouse propriétaire du stade, les travaux entraînent l'abaissement de la capacité à 33 150 places et l'amélioration du confort et de la visibilité.</p>
                         </blockquote>
 
-                        <h3>Header Level 3</h3>
+                        <h3>Organigramme</h3>
 
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                            <li>Aliquam tincidunt mauris eu risus.</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -214,22 +227,22 @@
                     <div class="col-lg-4">
                         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-                        <h2>Heading</h2>
-                        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+                        <h2>Président</h2>
+                        <p><strong>Damien Comolli</strong> est le président du Toulouse Football Club. Olivier Jaubert est le directeur général délégué du club.</p>
                         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
                     </div><!-- /.col-lg-4 -->
                     <div class="col-lg-4">
                         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-                        <h2>Heading</h2>
-                        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+                        <h2>Entraineur</h2>
+                        <p><strong>Philippe Montanier</strong> est l'entraineur de l'équipe professionnelle depuis le début de la saison 2021-2022, Michaël Debève est l'entraineur adjoint.</p>
                         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
                     </div><!-- /.col-lg-4 -->
                     <div class="col-lg-4">
                         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-                        <h2>Heading</h2>
-                        <p>And lastly this, the third column of representative placeholder content.</p>
+                        <h2>Formation</h2>
+                        <p><strong>Denis Zanko</strong> est le responsable du centre de formation. Enfin, Brendan Macfarlane est le responsable du recrutement.</p>
                         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
                     </div><!-- /.col-lg-4 -->
                 </div><!-- /.row -->

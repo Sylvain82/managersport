@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MediaController!{% endblock %}
+
+{% block body %}
+    {% for media in media %}
+<div class="col-md-4 mt-5 mb-3">
+    <div class="card">
+        <div class="card-image-wrapper">
+
+          <img src="/img/{{ media.photo }}" class="card-img-top img-fluid" alt="...">
+          <h2>{{ media.titre }}</h2>
+          <p>{{ media.commentaire }}</p>
+      </div>
+  </div>
+</div>
+
+    {% endfor %}
+
+{% endblock %}
