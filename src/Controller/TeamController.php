@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Equipe;
 use App\Entity\Player;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,10 +17,13 @@ class TeamController extends AbstractController
     {
         $this->entityManager = $entityManager;
 
-        $player  = $this->entityManager->getRepository(Player::class)->findAll();
+        $players  = $this->entityManager->getRepository(Player::class)->findAll();
+
+        $equipes = $this->entityManager->getRepository(Equipe::class)->findAll();
 
         return $this->render('team/index.html.twig', [
-            'player' => $player,
+            'players' => $players,
+            'equipes' => $equipes
 
         ]);
     }

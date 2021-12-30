@@ -1,42 +1,47 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello TeamController!{% endblock %}
+{% block title %}Effectifs{% endblock %}
 
 {% block body %}
-<h1>Effectif</h1>
+
+ <h1>Effectif</h1>
 
     <div class="container">
 
-        {% for player in player %}
+
+        {% for player in players %}
 
             <div class="col-md-4 mt-5 mb-3">
-                    <div class="card">
+                 <div class="card">
+
                         <div class="card-image-wrapper">
 
                             {% if player.photo %}
-                            <img src="/img/{{ player.photo }}" class="card-img-top img-fluid" alt="...">
 
-                                    {% else %}
-                                       <img src="/img/vide.png" class="card-img-top img-fluid" alt="...">
+                                    <img src="/img/{{ player.photo }}" class="card-img-top img-fluid" alt="...">
+
+                                {% else %}
+
+                                    <img src="/img/vide.png" class="card-img-top img-fluid" alt="...">
 
                             {% endif %}
-                    </div>
 
-                    <div class="card-body">
+                        </div>
 
-                       <h2 class="card-title">{{ player.name }} <br> {{ player.firstname }}</h2>
-                        <h5 class="card-text">{{ player.position }}</h5>
-                        <h5 class="card-text">Licence : {{ player.licence }}</h5>
-                        <h5 class="card-text">Tél : {{ player.phone }}</h5>
-                        <h5 class="card-text">Email : {{ player.email }}</h5>
+                        <div class="card-body">
 
-                        <a href="#" class="btn btn-primary">Fiche</a>
-                    </div>
+                                <h2 class="card-title">{{ player.name }} <br> {{ player.firstname }}</h2>
+                                <h5 class="card-text">{{ player.position }}</h5>
+                                <h5 class="card-text">Licence : {{ player.licence }}</h5>
+                                <h5 class="card-text">Tél : {{ player.phone }}</h5>
+                                <h5 class="card-text">Email : {{ player.email }}</h5>
+
+                                <a href="#" class="btn btn-primary">Fiche</a>
+                        </div>
                 </div>
-
             </div>
-        {% endfor %}
 
+        {% endfor %}
 
     </div>
 {% endblock %}

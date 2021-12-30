@@ -34,6 +34,7 @@ class Equipe
      */
     private $players;
 
+
     public function __construct()
     {
         $this->players = new ArrayCollection();
