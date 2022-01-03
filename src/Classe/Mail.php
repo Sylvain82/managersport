@@ -21,7 +21,7 @@ class Mail
                     [
                         'From' => [
                             'Email' => "sylvain.toulousain@hotmail.fr",
-                            'Name' => "La boutique française"
+                            'Name' => "Sport Manager"
                         ],
                         'To' => [
                             [
@@ -29,7 +29,7 @@ class Mail
                                 'Name' => $to_name
                             ]
                         ],
-                        'TemplateID' => 2676606,
+                        'TemplateID' => 3469404,
                         'TemplateLanguage' => true,
                         'Subject' => $subject,
                         'variables' => [

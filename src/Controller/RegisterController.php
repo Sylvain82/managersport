@@ -48,14 +48,14 @@ class RegisterController extends AbstractController
                 $this->entityManager->flush();
 
                 $mail = new Mail();
-                $content = "Hello ".$user->getFirstname()."<br/>Welcome in Football Statistics !";
-                $mail->send($user->getEmail(), $user->getFirstname(), 'Welcome in Football Statistics', $content);
+                $content = "Bonjour ".$user->getFirstname()."<br/>Profitez de tous les services sur Sport Manager !";
+                $mail->send($user->getEmail(), $user->getFirstname(), 'Votre inscription est terminée', $content);
 
-                $notification = "Your are registred";
+                $notification = "Vous êtes désormais inscris";
 
             } else
             {
-                $notification = "Email is false";
+                $notification = "Cet Email est deja utilisé";
 
             }
 
