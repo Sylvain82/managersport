@@ -65,6 +65,11 @@ class Competition
      */
     private $adversaire;
 
+    /**
+     * @ORM\Column(type="string", length=10000, nullable=true)
+     */
+    private $carte;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -180,6 +185,18 @@ class Competition
     public function setAdversaire(string $adversaire): self
     {
         $this->adversaire = $adversaire;
+
+        return $this;
+    }
+
+    public function getCarte(): ?string
+    {
+        return $this->carte;
+    }
+
+    public function setCarte(?string $carte): self
+    {
+        $this->carte = $carte;
 
         return $this;
     }

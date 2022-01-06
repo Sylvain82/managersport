@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class RegisterType extends AbstractType
 {
@@ -27,7 +28,7 @@ class RegisterType extends AbstractType
             ])
             ->add('lastname',TextType::class, [
                 'label'=>'Nom',
-                'constraints'=>new Length(null,2, 30),
+                'constraints'=> new Length(null,2, 30) ,
 
                 'attr'=> [
                     'placeholder'=>'Veuillez saisir votre nom'
@@ -42,22 +43,22 @@ class RegisterType extends AbstractType
             ->add('password', RepeatedType::class, [
                 'type'=> PasswordType::class,
                 'invalid_message' => 'Password and confirmation are different',
-                'label'=> 'Password',
+                'label'=> 'Mot de passe',
                 'required' => true,
                 'first_options'=>
-                    ['label' => 'Password',
-                        'constraints'=>new Length(null,2, 20),
+                    ['label' => 'Mot de passe',
+                        'constraints'=>new Length(null,5, 20) ,
                         'attr'=> [
-                            'placeholder'=> 'Your password'
+                            'placeholder'=> 'Votre mot de passe'
                         ]],
                 'second_options' =>
-                    ['label' => 'Confirm password',
-                        'constraints'=>new Length(null,2, 20),
+                    ['label' => 'Confirmez mot de passe',
+                        'constraints'=>new Length(null,5, 20) ,
                         'attr'=> [
-                            'placeholder'=> 'Confirm password'
+                            'placeholder'=> 'Confirmez mot de passe'
                         ]]])
             ->add('submit', SubmitType::class, [
-                'label'=>'Valider'
+                'label'=>'S\'inscrire'
             ])
         ;
     }

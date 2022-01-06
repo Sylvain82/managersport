@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Competition;
+use Cassandra\Map;
 use Couchbase\BooleanFieldSearchQuery;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -29,6 +30,7 @@ class CompetitionCrudController extends AbstractCrudController
             TextField::new('type'),
             TextField::new('stade'),
             UrlField::new('lieu'),
+            TextField::new('carte'),
             BooleanField::new('afficher'),
             TextField::new('adversaire'),
             TextField::new('score'),
