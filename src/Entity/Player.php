@@ -74,6 +74,11 @@ class Player
      */
     private $equipe;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $slug;
+
     public function __toString():string
     {
         return $this->equipe;
@@ -214,6 +219,18 @@ class Player
     public function setEquipe(?Equipe $equipe): self
     {
         $this->equipe = $equipe;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

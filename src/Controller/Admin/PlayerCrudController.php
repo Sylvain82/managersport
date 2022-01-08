@@ -12,6 +12,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Validator\Constraints\Choice;
@@ -29,6 +30,7 @@ class PlayerCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             TextField::new('firstname'),
+            SlugField::new('slug')->setTargetFieldName('name'),
             AssociationField::new('equipe'),
             TelephoneField::new('phone'),
             TextField::new('licence'),

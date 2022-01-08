@@ -28,4 +28,20 @@ class TeamController extends AbstractController
         ]);
     }
 
+
+    #[Route('/detail/{slug}', name: 'detail')]
+    public function show($slug): Response
+    {
+
+
+        $detail = $this->entityManager->getRepository(Player::class)->findOneBySlug($slug);
+
+        if(!$detail) {
+            return $this->redirectToRoute('team');
+        }
+        return $this->render('team/show.html.twig',[
+            'detail' => $detail,
+        ]);
+    }
+
 }
