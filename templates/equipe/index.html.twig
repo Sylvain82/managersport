@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les équipes{% endblock %}
+
+{% block body %}
+<h1 class="m-3">Calendrier</h1>
+
+<div class="container">
+
+    {%  for joueur in joueur %}
+
+            <div class="col-md-4 mt-5 mb-3">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h2 class="card-title">{{ joueur.name }} </h2>
+
+                    </div>
+                </div>
+
+            </div>
+
+    {% endfor %}
+
+{% endblock %}
