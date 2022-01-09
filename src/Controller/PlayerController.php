@@ -9,10 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class TeamController extends AbstractController
+class PlayerController extends AbstractController
 {
 
-    #[Route('/team', name: 'team')]
+    #[Route('/players', name: 'players')]
     public function index(EntityManagerInterface $entityManager): Response
     {
         $this->entityManager = $entityManager;
@@ -21,7 +21,7 @@ class TeamController extends AbstractController
 
         $equipes = $this->entityManager->getRepository(Equipe::class)->findAll();
 
-        return $this->render('team/index.html.twig', [
+        return $this->render('players/index.html.twig', [
             'players' => $players,
             'equipes' => $equipes
 
@@ -37,9 +37,9 @@ class TeamController extends AbstractController
         $detail = $this->entityManager->getRepository(Player::class)->findOneBySlug($slug);
 
         if(!$detail) {
-            return $this->redirectToRoute('team');
+            return $this->redirectToRoute('players');
         }
-        return $this->render('team/show.html.twig',[
+        return $this->render('players/show.html.twig',[
             'detail' => $detail,
         ]);
     }

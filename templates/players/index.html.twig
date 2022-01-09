@@ -8,7 +8,6 @@
 
     <div class="container">
 
-
         {% for player in players %}
 
             <div class="col-md-4 mt-5 mb-3">
@@ -36,7 +35,7 @@
                                 <h5 class="card-text">Tél : {{ player.phone }}</h5>
                                 <h5 class="card-text">Email : {{ player.email }}</h5>
 
-                                <a href="{{ path('team',  {'slug': player.slug } )  }}" class="btn btn-primary">Fiche :  {{ player.name }} {{ player.firstname }}</a>
+                                <a href="{{ path('players',  {'slug': player.slug } )  }}" class="btn btn-primary">Fiche :  {{ player.name }} {{ player.firstname }}</a>
                         </div>
                 </div>
             </div>
