@@ -35,16 +35,16 @@ class PlayerRepository extends ServiceEntityRepository
         ;
     }
     */
+//
+//
+//    public function findOneByBirth($dateNaissance): ?Player
+//    {
+//        return $this->createQueryBuilder('player')
+//            ->andWhere('player.dateNaissance = :val')
+//            ->setParameter('val', $dateNaissance)
+//            ->getQuery()
+//            ->getOneOrNullResult()
+//        ;
+//    }
 
-    /*
-    public function findOneBySomeField($value): ?Player
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

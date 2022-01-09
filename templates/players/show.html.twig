@@ -4,12 +4,13 @@
 
 {% block body %}
 
-    <h1 class="m-3">Détail</h1>
 
-    <div class="container">
+    <h1 class="m-1 text-center">{{ player.firstname }} {{ player.name }}</h1>
+    <h2 class="text-center">{{ age }} ans </h2>
+    <div class="container d-flex justify-content-center">
 
 
-            <div class="col-md-4 mt-5 mb-3">
+            <div class="col-md-6 mt-5 mb-3">
                 <div class="card">
 
                         {% if player.photo %}
@@ -24,11 +25,13 @@
 
                     <div class="card-body">
 
-                        <h2 class="card-title">{{ player.name }} <br> {{ player.firstname }}</h2>
-                        <h5 class="card-text">{{ player.position }}</h5>
-                        <h5 class="card-text">Licence : {{ player.licence }}</h5>
-                        <h5 class="card-text">Tél : {{ player.phone }}</h5>
-                        <h5 class="card-text">Email : {{ player.email }}</h5>
+                        <h3 class="card-text">{{ player.position }}</h3>
+                        <h3 class="card-text">{{ player.equipe }}</h3>
+                        <h3 class="card-text">Licence : {{ player.licence }}</h3>
+                        <h3 class="card-text">Tél : {{ player.phone }}</h3>
+                        <h4 class="card-text">Email : {{ player.email }}</h4>
+                        <h4 class="card-text">Adresse : {{ player.adressePostale }}</h4>
+
 
                     </div>
                 </div>

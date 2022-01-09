@@ -60,6 +60,11 @@ class Player
     private $dateNaissance;
 
     /**
+     * @param mixed $id
+     */
+
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $AdressePostale;
@@ -79,9 +84,14 @@ class Player
      */
     private $slug;
 
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $age;
+
     public function __toString():string
     {
-        return $this->equipe;
+        return $this->equipe AND $this->dateNaissance;;
     }
 
     public function getId(): ?int
@@ -187,6 +197,7 @@ class Player
         return $this;
     }
 
+
     public function getAdressePostale(): ?string
     {
         return $this->AdressePostale;
@@ -231,6 +242,18 @@ class Player
     public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getAge(): ?string
+    {
+        return $this->age;
+    }
+
+    public function setAge(?string $age): self
+    {
+        $this->age = $age;
 
         return $this;
     }

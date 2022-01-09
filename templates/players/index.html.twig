@@ -32,12 +32,8 @@
                                 <h2 class="card-title">{{ player.name }} <br> {{ player.firstname }}</h2>
                                 <h5 class="card-text">{{ player.position }}</h5>
                                 <h5 class="card-text">Licence : {{ player.licence }}</h5>
-{#                                <h5 class="card-text">Tél : {{ player.phone }}</h5>#}
-{#                                <h5 class="card-text">Email : {{ player.email }}</h5>#}
 
-{#                            <a href="{{ path('recipe', {'slug' : recipe.slug}) }}">#}
-
-                                <a href="{{ path('player',  {'slug': player.slug} )  }}" class="btn btn-primary">Fiche :  {{ player.name }} {{ player.firstname }}</a>
+                                <a href="{{ path('player',  {'slug': player.slug} ) }}" class="btn btn-primary">Fiche :  {{ player.name }} {{ player.firstname }}</a>
                         </div>
                 </div>
             </div>
