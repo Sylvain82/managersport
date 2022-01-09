@@ -32,7 +32,7 @@ class PlayerController extends AbstractController
     {
         $player = $this->entityManager->getRepository(Player::class)->findOneBySlug($slug);
 
-        $dateNaissance = $player->getDateNaissance()->Format("y-m-d");
+        $dateNaissance = $player->getDateNaissance($player)->Format("y-m-d");
         $aujourdhui = date("Y-m-d");
         $diff = date_diff(date_create($dateNaissance), date_create($aujourdhui));
         $age = $diff->format('%y');
