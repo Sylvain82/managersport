@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Equipe;
 use App\Entity\Player;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -11,37 +10,36 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PlayerController extends AbstractController
 {
+    private $entityManager;
 
-    #[Route('/players', name: 'players')]
-    public function index(EntityManagerInterface $entityManager): Response
-    {
+    public function __construct(EntityManagerInterface $entityManager){
         $this->entityManager = $entityManager;
+    }
 
-        $players  = $this->entityManager->getRepository(Player::class)->findAll();
+    #[Route('/joueurs', name: 'players')]
+    public function index(): Response
+    {
+        $players = $this->entityManager->getRepository(Player::class)->findAll();
 
-        $equipes = $this->entityManager->getRepository(Equipe::class)->findAll();
-
-        return $this->render('players/index.html.twig', [
-            'players' => $players,
-            'equipes' => $equipes
-
+        return $this->render('players/index.html.twig',[
+            'players' => $players
         ]);
     }
 
 
-    #[Route('/detail/{slug}', name: 'detail')]
+    #[Route('/joueur/{slug}', name: 'player')]
     public function show($slug): Response
     {
+        $player = $this->entityManager->getRepository(Player::class)->findOneBySlug($slug);
 
-
-        $detail = $this->entityManager->getRepository(Player::class)->findOneBySlug($slug);
-
-        if(!$detail) {
+        if(!$player) {
             return $this->redirectToRoute('players');
         }
+
+
+
         return $this->render('players/show.html.twig',[
-            'detail' => $detail,
+            'player' => $player,
         ]);
     }
-
 }
