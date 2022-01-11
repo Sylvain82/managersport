@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Competition;
+use App\Entity\Equipe;
 use App\Entity\Player;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,9 +18,31 @@ class EquipeController extends AbstractController
         $this->entityManager = $entityManager;
 
         $joueur  = $this->entityManager->getRepository(Player::class)->findAll();
+        $equipe = $this->entityManager->getRepository(Equipe::class)->findAll();
 
-        return $this->render('equipe/index.html.twig',[
-            'joueur' => $joueur
+
+        return $this->render('equipe/index.html.twig',  [
+            'joueur' => $joueur,
+            'equipe' => $equipe,
         ]);
     }
+
+    #[Route('/equip/{id}', name: 'equip')]
+    public function show(EntityManagerInterface $entityManager, $id): Response
+    {
+        $this->entityManager = $entityManager;
+
+        $selection = $this->entityManager->getRepository(Player::class)->findByEquipe($id);
+
+
+        if(!$selection) {
+            return $this->redirectToRoute('equipe');
+        }
+
+        return $this->render('equipe/show.html.twig',[
+            'selection' => $selection
+
+        ]);
+    }
+
 }

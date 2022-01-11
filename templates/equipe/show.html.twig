@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipe détail{% endblock %}
+
+{% block body %}
+
+    {% for selection in selection %}
+
+
+        <div class="col-md-3 mt-5 mb-3">
+            <div class="card">
+
+                <h1 class="m-1 text-center"> {{ selection.firstname }} {{ selection.name }}</h1>
+                <div class="container d-flex justify-content-center">
+
+{#                {% if selection.photo %}#}
+
+{#                    <img src="/img/{{ selection.photo }}" class="card-img-top img-fluid" alt="...">#}
+
+{#                {% else %}#}
+
+{#                    <img src="/img/vide.png" class="card-img-top img-fluid" alt="...">#}
+
+{#                {% endif %}#}
+
+                <div class="card-body">
+
+                    <h3 class="card-text">{{ selection.position }}</h3>
+                    <h3 class="card-text">{{ selection.equipe }}</h3>
+{#                    <h3 class="card-text">Licence : {{ selection.licence }}</h3>#}
+{#                    <h3 class="card-text">Tél : {{ selection.phone }}</h3>#}
+{#                    <h4 class="card-text">Email : {{ selection.email }}</h4>#}
+{#                    <h4 class="card-text">Adresse : {{ selection.adressePostale }}</h4>#}
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endfor  %}
+
+{% endblock %}

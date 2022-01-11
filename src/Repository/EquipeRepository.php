@@ -22,19 +22,17 @@ class EquipeRepository extends ServiceEntityRepository
     // /**
     //  * @return Equipe[] Returns an array of Equipe objects
     //  */
-    /*
-    public function findByExampleField($value)
+
+    public function findByEquipe($id)
     {
         return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('e.id = :val')
+            ->setParameter('val', $id)
             ->orderBy('e.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Equipe
