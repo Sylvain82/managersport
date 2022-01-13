@@ -35,12 +35,6 @@ class Equipe
     private $players;
 
 
-    public function __construct()
-    {
-        $this->players = new ArrayCollection();
-    }
-
-
     public function getId(): ?int
     {
         return $this->id;
@@ -82,6 +76,7 @@ class Equipe
     {
         return $this->players;
     }
+
 
     public function addPlayer(Player $player): self
     {
