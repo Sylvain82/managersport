@@ -4,9 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Player;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectManager;
+use Faker\Factory;
+use Faker\Provider\DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Faker\Provider\fr_FR\PhoneNumber;
 
 class PlayerController extends AbstractController
 {
@@ -14,12 +18,33 @@ class PlayerController extends AbstractController
 
     public function __construct(EntityManagerInterface $entityManager){
         $this->entityManager = $entityManager;
+
     }
 
     #[Route('/joueurs', name: 'players')]
-    public function index(): Response
+    public function index(EntityManagerInterface $entityManager): Response
     {
+        $this->entityManager = $entityManager;
         $players = $this->entityManager->getRepository(Player::class)->findAll();
+
+//        $generator = Factory::create("fr_FR");
+//
+//        for ($i = 0; $i <= 10; $i++) {
+//            $category = (new Player())
+//                ->setName($generator->lastName)
+//                ->setFirstname($generator->firstNameMale)
+////                ->setSlug($generator->slug)
+//                ->setEmail($generator->email)
+//                ->setPhone($generator->mobileNumber)
+//                ->setAdressePostale($generator->address)
+//                ->setDateNaissance($generator->dateTimeThisCentury);
+////                ->setEquipe(($generator->numberBetween(1,3)));
+//
+//
+//            $entityManager->persist($category);
+//        }
+//        $entityManager->flush();
+
 
         return $this->render('players/index.html.twig',[
             'players' => $players
@@ -38,6 +63,7 @@ class PlayerController extends AbstractController
         $age = $diff->format('%y');
 
 
+
         if(!$player) {
             return $this->redirectToRoute('players');
         }
@@ -47,7 +73,9 @@ class PlayerController extends AbstractController
             'player' => $player,
             'age' => $age
 
+
         ]);
+
     }
 
 
