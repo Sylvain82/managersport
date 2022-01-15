@@ -33,13 +33,13 @@ class PlayerController extends AbstractController
 //            $category = (new Player())
 //                ->setName($generator->lastName)
 //                ->setFirstname($generator->firstNameMale)
-////                ->setSlug($generator->slug)
 //                ->setEmail($generator->email)
 //                ->setPhone($generator->mobileNumber)
 //                ->setAdressePostale($generator->address)
-//                ->setDateNaissance($generator->dateTimeThisCentury);
-////                ->setEquipe(($generator->numberBetween(1,3)));
-//
+//                ->setDateNaissance($generator->dateTimeThisCentury)
+//                ->setPhoto($generator->imageUrl($width = 640, $height = 480))
+//                ->setLicence($generator->randomNumber(8))
+//                ->setPosition($generator->randomElement(array ('GK','DC','BU')));
 //
 //            $entityManager->persist($category);
 //        }
