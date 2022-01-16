@@ -16,7 +16,11 @@
 
                     <div class="card-body">
                         <h2 class="card-title">{{ calendrier.type }} </h2>
-                        <h2 class="card-title">{{ calendrier.equipe }} - {{ calendrier.adversaire }}</h2>
+
+                        <h2 class="card-title">
+                            <a href="{{ path('calequipe',  {'nom': calendrier.equipe} ) }}">{{ calendrier.equipe }}</a> - {{ calendrier.adversaire }}
+                        </h2>
+
                         <h3 class="card-title">{{ calendrier.heureBis.format('d-m-Y à H:i') }} </h3> <br>
                             <a href="{{ calendrier.lieu }}" class="card-title">{{ calendrier.stade }}</a>
 {#                        {{ calendrier.carte }}#}
