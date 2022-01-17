@@ -80,6 +80,13 @@
         {% set impersonator_permission = constant('Symfony\\Component\\Security\\Core\\Authorization\\Voter\\AuthenticatedVoter::IS_IMPERSONATOR') is defined ? 'IS_IMPERSONATOR' : 'ROLE_PREVIOUS_ADMIN' %}
 
         {% set user_menu_dropdown %}
+            <style>
+                .dropdown-menu , .dropdown-menu-end {
+                    color: #6998AB;
+                }
+            </style>
+            
+            
             <ul class="dropdown-menu dropdown-menu-end">
                 <li class="dropdown-user-details">
                     <div>{{ user_menu_avatar }}</div>
@@ -113,6 +120,29 @@
 
         <div class="wrapper">
             {% block wrapper %}
+
+                <style>
+                    .wrapper {
+                        background: #1A374D;
+                    }
+                    #main , #main table  , #main a , #main tr {
+                        color: #1A374D;
+                    }
+
+                    #main thead tr a{
+                        color: whitesmoke;
+                    }
+
+                    #main a:hover {
+                        color: #1A374D;
+                    }
+
+                    #main tbody tr:hover {
+                        color: #000;
+                    }
+                    
+                </style>
+
                 <div class="responsive-header">
                     {% block responsive_header %}
                         <button id="navigation-toggler" type="button" aria-label="Toggle navigation">
@@ -243,12 +273,23 @@
                     </aside>
 
                     <div class="content-wrapper">
+
                         {% block content %}
                             <article class="content">
                                 {% block content_header_wrapper %}
                                     {% set has_help_message = (ea.crud.helpMessage ?? '') is not empty %}
                                     <section class="content-header m-2">
                                         {% block content_header %}
+                                            <style>
+                                                .content-header{
+                                                    background: #1A374D;
+                                                }
+                                                .content-header h1{
+                                                    color: whitesmoke;
+                                                }
+
+                                            </style>
+
                                             <div class="content-header-title">
                                                 <h1 class="title">
                                                     {% block content_title %}{% endblock %}
@@ -275,6 +316,12 @@
                                 </section>
 
                                 {% block content_footer_wrapper %}
+                                    <style>
+                                        .list-pagination-counter {
+                                            color: whitesmoke;
+                                        }
+                                    </style>
+
                                     {% set content_footer = block('content_footer') is defined ? block('content_footer') : '' %}
                                     {% if content_footer is not empty %}
                                         <section class="content-footer">
