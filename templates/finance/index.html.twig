@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Finance index{% endblock %}
+
+{% block body %}
+    <h1>Finance index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Montant</th>
+                <th>Justification</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for finance in finances %}
+            <tr>
+                <td>{{ finance.id }}</td>
+                <td>{{ finance.type ? 'Yes' : 'No' }}</td>
+                <td>{{ finance.montant }}</td>
+                <td>{{ finance.justification }}</td>
+                <td>
+                    <a href="{{ path('finance_show', {'id': finance.id}) }}">show</a>
+                    <a href="{{ path('finance_edit', {'id': finance.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('finance_new') }}">Create new</a>
+{% endblock %}

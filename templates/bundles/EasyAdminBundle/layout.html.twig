@@ -80,10 +80,15 @@
         {% set impersonator_permission = constant('Symfony\\Component\\Security\\Core\\Authorization\\Voter\\AuthenticatedVoter::IS_IMPERSONATOR') is defined ? 'IS_IMPERSONATOR' : 'ROLE_PREVIOUS_ADMIN' %}
 
         {% set user_menu_dropdown %}
+
             <style>
                 .dropdown-menu , .dropdown-menu-end {
                     color: #6998AB;
                 }
+                #main label {
+                    color: whitesmoke;
+                }
+                .
             </style>
             
             
