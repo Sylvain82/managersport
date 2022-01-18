@@ -9,9 +9,11 @@
 /* This may not be needed depending on if you want to restrict the card size*/
 .card{
     max-width: 380px;
-
-
 }
+.container .card-body{
+    border: black 2px solid;
+}
+
 .card:hover{
     transform: translateX(5%);
 }

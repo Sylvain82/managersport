@@ -6,13 +6,15 @@
 
     <h1 class="m-3">Calendrier</h1>
 
-    <div class="container">
+    <div class="container bg-dark ">
 
         {%  for calendrier in calendrier %}
         {%  if (calendrier.afficher) %}
 
             <div class="col-md-4 mt-5 mb-3">
                 <div class="card">
+
+
 
                     <div class="card-body">
                         <h2 class="card-title">{{ calendrier.type }} </h2>
@@ -23,11 +25,12 @@
 
                         <h3 class="card-title">{{ calendrier.heureBis.format('d-m-Y à H:i') }} </h3> <br>
                             <a href="{{ calendrier.lieu }}" class="card-title">{{ calendrier.stade }}</a>
-{#                        {{ calendrier.carte }}#}
+
+                        {% if calendrier.carte %}
                         <div class="m-3">
                             <iframe src="{{ calendrier.carte }}" width="90%"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
-
+                        {% endif %}
                     </div>
                 </div>
 

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Finance;
+use App\Entity\Media;
 use App\Form\FinanceType;
 use App\Repository\FinanceRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -17,6 +18,7 @@ class FinanceController extends AbstractController
     #[Route('/', name: 'finance_index', methods: ['GET'])]
     public function index(FinanceRepository $financeRepository): Response
     {
+
         return $this->render('finance/index.html.twig', [
             'finances' => $financeRepository->findAll(),
         ]);
@@ -78,4 +80,5 @@ class FinanceController extends AbstractController
 
         return $this->redirectToRoute('finance_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }
