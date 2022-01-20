@@ -18,11 +18,6 @@ class Finance
     private $id;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private $type;
-
-    /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $montant;
@@ -33,7 +28,7 @@ class Finance
     private $justification;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $date;
 
@@ -47,22 +42,21 @@ class Finance
      */
     private $categorie;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $recette;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $facture;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getType(): ?bool
-    {
-        return $this->type;
-    }
-
-    public function setType(bool $type): self
-    {
-        $this->type = $type;
-
-        return $this;
-    }
 
     public function getMontant(): ?int
     {
@@ -120,6 +114,30 @@ class Finance
     public function setCategorie(string $categorie): self
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getRecette(): ?bool
+    {
+        return $this->recette;
+    }
+
+    public function setRecette(bool $recette): self
+    {
+        $this->recette = $recette;
+
+        return $this;
+    }
+
+    public function getFacture(): ?string
+    {
+        return $this->facture;
+    }
+
+    public function setFacture(?string $facture): self
+    {
+        $this->facture = $facture;
 
         return $this;
     }

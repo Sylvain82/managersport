@@ -37,7 +37,8 @@ class PlayerCrudController extends AbstractCrudController
             TextField::new('licence'),
             EmailField::new('email'),
             TextField::new('position'),
-            ImageField::new('photo')->setBasePath('img/')
+            ImageField::new('photo')
+                ->setBasePath('img/')
                 ->setUploadDir('public/img/')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired('false'),

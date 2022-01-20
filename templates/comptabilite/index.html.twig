@@ -19,7 +19,8 @@
     <table class="table-bordered table table-dark">
         <thead>
             <th>Nom</th>
-            <th>Categorie</th>
+            <th>Date</th>
+            <th>Catégorie</th>
             <th>Commentaire</th>
             <th>Montant</th>
         </thead>
@@ -32,10 +33,11 @@
         {% set somme = somme + finance.montant %}
            <tr>
             <td>{{ finance.nom }} </td>
+            <td>{{ finance.date|date("m/d/Y") }}</td>
             <td>{{ finance.categorie }} </td>
             <td>{{ finance.justification }} </td>
 
-               {% if finance.type %}
+               {% if finance.recette %}
 
                <td class="recette">+{{ finance.montant / 100 }} € </td>
                 {% else %}

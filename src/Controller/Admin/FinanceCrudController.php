@@ -6,11 +6,11 @@ use App\Entity\Finance;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use Symfony\Component\Validator\Constraints\Date;
 
 class FinanceCrudController extends AbstractCrudController
 {
@@ -22,19 +22,26 @@ class FinanceCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            DateField::new('date'),
+            DateTimeField::new('date')->setFormat('d-M-Y') ,
             TextField::new('nom'),
             ChoiceField::new('categorie')
                 ->setChoices([
-                    'equipement' => 'equipements',
-                     'sponsor' => 'sponsor' ,
-                     'buvette' => 'buvette',
-                      'inscription' => 'inscription compétition'
+                    'Equipements' => 'Equipements',
+                     'Sponsoring' => 'Sponsoring' ,
+                     'Buvette' => 'Buvette',
+                        'Compétitions' => 'Compétitions',
+                        'Evenements(Loto, repas, sorties)' => 'Événements(Loto, repas, sorties)'
                         ]
                 ),
-            BooleanField::new('type'),
-            TextField::new('justification'),
+            BooleanField::new('recette'),
+            TextEditorField::new('justification'),
             MoneyField::new('montant')->setCurrency('EUR'),
+            ImageField::new('facture')
+                ->setBasePath('img/')
+                ->setUploadDir('public/img/')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setRequired('false'),
+
         ];
     }
 
