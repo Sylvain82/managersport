@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calendrier{% endblock %}
+
+{% block body %}
+<div class="mt-5 container bg-dark d-flex">
+
+                       <div class="col-md-8 mt-5 mb-3 m-auto">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h2 class="card-title">{{ calendrierDetail[0].type }} </h2>
+
+                            <h2 class="card-title">
+                                <a href="#">{{ calendrierDetail[0].equipe }}</a> - {{ calendrierDetail[0].adversaire }}
+                            </h2>
+
+                            <h3 class="card-title">{{ calendrierDetail[0].heureBis.format('d-m-Y à H:i') }} </h3> <br>
+                                <a href="{{ calendrierDetail[0].lieu }}" class="card-title">{{ calendrierDetail[0].stade }}</a>
+
+                            {% if calendrierDetail[0].carte %}
+                            <div class="m-3">
+                                <iframe src="{{ calendrierDetail[0].carte }}" width="90%"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            {% endif %}
+                        </div>
+
+
+                    </div>
+
+                </div>
+</div>
+
+{% endblock %}

@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Competition;
 use App\Entity\Equipe;
 use App\Entity\Player;
 use Doctrine\ORM\EntityManagerInterface;

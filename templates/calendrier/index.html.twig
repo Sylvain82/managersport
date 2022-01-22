@@ -3,41 +3,45 @@
 {% block title %}Calendrier{% endblock %}
 
 {% block body %}
+    <br>
+    <br>
+    <h1 class="mt-5">Calendrier</h1>
 
-    <h1 class="m-3">Calendrier</h1>
+    <table class="table mt-5 table-dark">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Domicile</th>
+            <th>Exterieur</th>
+            <th>Stade</th>
+            <th>Détail</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for calendrier in calendrier %}
+            <tr>
+                <td>{{ calendrier.heureBis.format('d-m-Y à H:i') }}</td>
+                <td>{{ calendrier.type }}</td>
 
-    <div class="container bg-dark ">
+                {% if calendrier.domicile %}
+                  <td>{{ calendrier.equipe }}</td>
+                  <td>{{ calendrier.adversaire }}</td>
+                {% else %}
+                    <td>{{ calendrier.adversaire }}</td>
+                    <td>{{ calendrier.equipe }}</td>
+                {% endif %}
 
-        {%  for calendrier in calendrier %}
-        {%  if (calendrier.afficher) %}
+                    <td>{{ calendrier.stade }}</td>
 
-            <div class="col-md-4 mt-5 mb-3">
-                <div class="card">
+                    <td> <a href="{{ path('caldetail',  {'id': calendrier.id} ) }}">Détails {{ calendrier.id }}</a></td>
 
-
-
-                    <div class="card-body">
-                        <h2 class="card-title">{{ calendrier.type }} </h2>
-
-                        <h2 class="card-title">
-                            <a href="{{ path('calequipe',  {'nom': calendrier.equipe} ) }}">{{ calendrier.equipe }}</a> - {{ calendrier.adversaire }}
-                        </h2>
-
-                        <h3 class="card-title">{{ calendrier.heureBis.format('d-m-Y à H:i') }} </h3> <br>
-                            <a href="{{ calendrier.lieu }}" class="card-title">{{ calendrier.stade }}</a>
-
-                        {% if calendrier.carte %}
-                        <div class="m-3">
-                            <iframe src="{{ calendrier.carte }}" width="90%"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                        {% endif %}
-                    </div>
-                </div>
-
-            </div>
-
-        {% endif %}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
         {% endfor %}
+    </table>
 
-    </div>
 {% endblock %}

@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
@@ -34,7 +35,7 @@ class FinanceCrudController extends AbstractCrudController
                         ]
                 ),
             BooleanField::new('recette'),
-            TextEditorField::new('justification'),
+            TextareaField::new('justification'),
             MoneyField::new('montant')->setCurrency('EUR'),
             ImageField::new('facture')
                 ->setBasePath('img/')

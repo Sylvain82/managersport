@@ -70,6 +70,11 @@ class Competition
      */
     private $carte;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $domicile;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -197,6 +202,18 @@ class Competition
     public function setCarte(?string $carte): self
     {
         $this->carte = $carte;
+
+        return $this;
+    }
+
+    public function getDomicile(): ?bool
+    {
+        return $this->domicile;
+    }
+
+    public function setDomicile(bool $domicile): self
+    {
+        $this->domicile = $domicile;
 
         return $this;
     }

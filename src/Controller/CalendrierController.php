@@ -28,6 +28,25 @@ class CalendrierController extends AbstractController
     }
 
 
+    #[Route('/calendrier/{id}', name: 'caldetail')]
+
+    public function Detail(EntityManagerInterface $entityManager , $id): Response
+    {
+
+        $this->entityManager = $entityManager;
+
+        $calendrierDetail = $this->entityManager->getRepository(Competition::class)->findById($id);
+
+
+        if(!$calendrierDetail) {
+            return $this->redirectToRoute('calendrier');
+        }
+
+        return $this->render('calendrier/detail.html.twig', [
+            'calendrierDetail' => $calendrierDetail
+        ]);
+    }
+
         #[Route('/calendrier/{nom}', name: 'calequipe')]
 
     public function Show(EntityManagerInterface $entityManager , $nom): Response
@@ -38,7 +57,7 @@ class CalendrierController extends AbstractController
 
         $players = $this->entityManager->getRepository(Equipe::class)->findByNom($nom);
         $selection = $this->entityManager->getRepository(Player::class)->findByEquipe($players);
-
+dd($selection);
         if(!$selection) {
             return $this->redirectToRoute('equipe');
         }
@@ -46,6 +65,5 @@ class CalendrierController extends AbstractController
             'selection' => $selection
         ]);
     }
-
 
 }

@@ -3,8 +3,13 @@
 {% block title %}Detail joueur{% endblock %}
 
 {% block body %}
+<style>
+    .bloc{
+        margin-top: 80px;
+    }
+</style>
 
-
+<div class="bloc">
     <h1 class="m-1 text-center">{{ player.firstname }} {{ player.name }}</h1>
     <h2 class="text-center">{{ age }} ans </h2>
     <div class="container d-flex justify-content-center">
@@ -39,5 +44,5 @@
 
 
     </div>
-
+</div>
 {% endblock %}
