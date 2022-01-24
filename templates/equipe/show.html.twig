@@ -4,27 +4,29 @@
 
 {% block body %}
 
-    {% for selection in selection %}
-
-
-        <div class="col-md-3 mt-5 mb-3">
-            <div class="card">
-
-                <h1 class="m-1 text-center"> {{ selection.firstname }} {{ selection.name }}</h1>
-                <div class="container d-flex justify-content-center">
-
-
-                <div class="card-body">
-
-                    <h3 class="card-text">{{ selection.position }}</h3>
-
-
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-{% endfor  %}
-
+p<div class="container mt-5">
+        <table class="table mt-5 table-dark">
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Poste</th>
+                <th>Détail</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for selection in selection %}
+                <tr>
+                    <td>{{ selection.name}}</td>
+                    <td>{{ selection.firstname }}</td>
+                    <td>{{ selection.position }}</td>
+                    <td> <a href="{{ path('player',  {'slug': selection.slug} ) }}">Détails</a></td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+        </table>
+</div>
 {% endblock %}

@@ -29,17 +29,18 @@ class PlayerController extends AbstractController
 
 //        $generator = Factory::create("fr_FR");
 //
-//        for ($i = 0; $i <= 10; $i++) {
+//        for ($i = 0; $i <= 20; $i++) {
 //            $category = (new Player())
 //                ->setName($generator->lastName)
-//                ->setFirstname($generator->firstNameMale)
+//                ->setFirstname($generator->firstNameFemale)
 //                ->setEmail($generator->email)
 //                ->setPhone($generator->mobileNumber)
 //                ->setAdressePostale($generator->address)
 //                ->setDateNaissance($generator->dateTimeThisCentury)
-//                ->setPhoto($generator->imageUrl($width = 640, $height = 480))
-//                ->setLicence($generator->randomNumber(8))
-//                ->setPosition($generator->randomElement(array ('GK','DC','BU')));
+//                ->setPhoto($generator->imageUrl($width = 640, $height = 480), 'women')
+////                ->setGenre($generator->randomLetter('F')
+////                ->setLicence($generator->randomNumber(8))
+//                ->setPosition($generator->randomElement(array ('GK','DC','BU', 'DR', 'DL', 'MC', 'MR', 'ML')));
 //
 //            $entityManager->persist($category);
 //        }

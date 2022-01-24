@@ -3,18 +3,20 @@
 {% block title %}Calendrier{% endblock %}
 
 {% block body %}
+
     <br>
     <br>
     <h1 class="mt-5">Calendrier</h1>
 
-    <table class="table mt-5 table-dark">
+    <table class="table mt-5 table-striped table-dark" data-toggle="table">
         <thead>
         <tr>
             <th>Date</th>
             <th>Type</th>
+            <th>Evenement</th>
             <th>Domicile</th>
             <th>Exterieur</th>
-            <th>Stade</th>
+            <th>Score</th>
             <th>Détail</th>
         </tr>
         </thead>
@@ -23,6 +25,7 @@
             <tr>
                 <td>{{ calendrier.heureBis.format('d-m-Y à H:i') }}</td>
                 <td>{{ calendrier.type }}</td>
+                <td>{{ calendrier.event }}</td>
 
                 {% if calendrier.domicile %}
                   <td>{{ calendrier.equipe }}</td>
@@ -31,17 +34,18 @@
                     <td>{{ calendrier.adversaire }}</td>
                     <td>{{ calendrier.equipe }}</td>
                 {% endif %}
+                <td>{{ calendrier.score }}</td>
 
-                    <td>{{ calendrier.stade }}</td>
 
-                    <td> <a href="{{ path('caldetail',  {'id': calendrier.id} ) }}">Détails {{ calendrier.id }}</a></td>
+                    <td> <a title="Le détail du match {{ calendrier.equipe }} - {{ calendrier.adversaire }}" href="{{ path('caldetail',  {'id': calendrier.id} ) }}">Détails</a></td>
 
             </tr>
         {% else %}
             <tr>
                 <td colspan="5">no records found</td>
             </tr>
-        {% endfor %}
-    </table>
 
+        {% endfor %}
+
+    </table>
 {% endblock %}
