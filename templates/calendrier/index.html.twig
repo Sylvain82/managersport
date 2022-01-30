@@ -8,7 +8,7 @@
     <br>
     <h1 class="mt-5">Calendrier</h1>
 
-    <table class="table mt-5 table-striped table-dark" data-toggle="table">
+    <table id="sortTable" class="table mt-5 table-striped table-dark" data-toggle="table">
         <thead>
         <tr>
             <th>Date</th>
@@ -48,4 +48,9 @@
         {% endfor %}
 
     </table>
+
+    <script>
+        $('#sortTable').DataTable();
+    </script>
+
 {% endblock %}

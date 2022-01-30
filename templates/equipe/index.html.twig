@@ -3,6 +3,13 @@
 {% block title %}Les équipes{% endblock %}
 
 {% block body %}
+    <style>
+        .card-body a{
+            width: 100%;
+        }
+
+    </style>
+
 <h1 class="m-3">Calendrier</h1>
 
 <div class="container">
@@ -13,7 +20,7 @@
                 <div class="card">
 
                     <div class="card-body text-center">
-                        <a href="{{ path('equip',  {'id': equipe.id} ) }}" class="btn btn-primary">Fiche :  {{ equipe.nom }} </a>
+                        <a href="{{ path('equip',  {'id': equipe.id} ) }}" class="btn btn-primary">{{ equipe.nom }} </a>
 
                     </div>
                 </div>

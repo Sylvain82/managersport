@@ -32,20 +32,19 @@ class PlayerController extends AbstractController
 //        for ($i = 0; $i <= 20; $i++) {
 //            $category = (new Player())
 //                ->setName($generator->lastName)
-//                ->setFirstname($generator->firstNameFemale)
+//                ->setFirstname($generator->firstNameMale)
 //                ->setEmail($generator->email)
 //                ->setPhone($generator->mobileNumber)
 //                ->setAdressePostale($generator->address)
 //                ->setDateNaissance($generator->dateTimeThisCentury)
-//                ->setPhoto($generator->imageUrl($width = 640, $height = 480), 'women')
-////                ->setGenre($generator->randomLetter('F')
+////                ->setPhoto($generator->imageUrl($width = 640, $height = 480), 'women')
+////                ->setGenre($generator->randomLetter('M')
 ////                ->setLicence($generator->randomNumber(8))
 //                ->setPosition($generator->randomElement(array ('GK','DC','BU', 'DR', 'DL', 'MC', 'MR', 'ML')));
 //
 //            $entityManager->persist($category);
 //        }
 //        $entityManager->flush();
-
 
         return $this->render('players/index.html.twig',[
             'players' => $players

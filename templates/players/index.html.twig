@@ -6,39 +6,42 @@
 
  <h1 class="m-3">Effectif</h1>
 
-    <div class="container">
-
+    <table id="sortTable" class="table mt-5 table-striped table-dark" data-toggle="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Téléphone</th>
+            <th>Poste</th>
+            <th>Licence</th>
+            <th>Equipe</th>
+            <th>Détails</th>
+        </tr>
+        </thead>
+        <tbody>
         {% for player in players %}
+            <tr>
+                <td>{{ player.name }}</td>
+                <td>{{ player.firstname }}</td>
+                <td>{{ player.phone }}</td>
+                <td>{{ player.position }}</td>
+                <td>{{ player.licence }}</td>
+                <td>{{ player.equipe }}</td>
 
-            <div class="col-md-4 mt-5 mb-3">
-                 <div class="card">
+                <td><a href="{{ path('player',  {'slug': player.slug} ) }}" class="btn btn-primary">Fiche</a></td>
 
-                        <div class="card-image-wrapper">
-
-                            {% if player.photo %}
-
-                                    <img src="/img/{{ player.photo }}" class="card-img-top img-fluid" alt="...">
-
-                                {% else %}
-
-                                    <img src="/img/vide.png" class="card-img-top img-fluid" alt="">
-
-                            {% endif %}
-
-                        </div>
-
-                        <div class="card-body">
-
-                                <h2 class="card-title">{{ player.name }} <br> {{ player.firstname }}</h2>
-                                <h5 class="card-text">{{ player.position }}</h5>
-                                <h5 class="card-text">Licence : {{ player.licence }}</h5>
-
-                                <a href="{{ path('player',  {'slug': player.slug} ) }}" class="btn btn-primary">Fiche :  {{ player.name }} {{ player.firstname }}</a>
-                        </div>
-                </div>
-            </div>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
 
         {% endfor %}
 
-    </div>
+    </table>
+    <script>
+        $('#sortTable').DataTable();
+    </script>
+
+
 {% endblock %}
