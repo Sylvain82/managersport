@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Presence{% endblock %}
+
+{% block body %}
+
+        <br>
+        <br>
+        <table class="table mt-5 table-striped table-dark">
+            <thead>
+            <tr>
+                    <th></th>
+
+                    {% for event in event %}
+
+                            {% if event.equipe ==  "TFC - Equipe PRO" %}
+
+                                <th>
+                                    {{ event.heureBis.format('d-m H:i') }}  {{ event.event }}
+                                </th>
+                            {% endif %}
+                    {% endfor %}
+
+            </tr>
+            </thead>
+
+                    {% for player in players %}
+                            {% if player.equipe == "TFC - Equipe PRO" %}
+                                <tr>
+                                    <td>{{ player.name }} {{ player.firstname }}</td>
+                                </tr>
+
+                              {% endif %}
+                    {% endfor %}
+                <tbody>
+
+                <p>TEST</p>
+
+                </tbody>
+
+
+
+
+        </table>
+
+
+{% endblock %}
