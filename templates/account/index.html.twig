@@ -31,17 +31,20 @@
 
             </div>
         </div>
-<div class="col-md-4 mt-5 mb-3">
+
+        <div class="col-md-4 mt-5 mb-3">
             <div class="card">
 
                 <h3><a class="card-title" href="{{ path('media') }}">Médias</a></h3>
 
             </div>
-        </div><div class="col-md-4 mt-5 mb-3">
+        </div>
+
+        <div class="col-md-4 mt-5 mb-3">
             <div class="card">
 
                 {% if is_granted('ROLE_ADMIN') %}
-                    <h3>Vous êtes administrateur ➡️<a class="text-decoration-none text-primary" href="{{ path('admin') }}">  Gestion de votre club ?</a></h3>
+                    <h3>Vous êtes administrateur ➡️<a class="card-title" href="{{ path('admin') }}">  Gestion de votre club ?</a></h3>
                 {% endif %}
 
             </div>
