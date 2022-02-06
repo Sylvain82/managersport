@@ -32,7 +32,6 @@
             -moz-user-select: none;
             user-select: none;
         }
-
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -42,7 +41,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="public/assets/dist/css/carousel.css" rel="stylesheet">
+    <link href="../assets/dist/css/carousel.css" rel="stylesheet">
 </head>
 {% block javascripts %}
     {#{{ encore_entry_script_tags('app') }}#}
@@ -152,8 +151,8 @@
                     <div class="overlay" style="opacity: 0.7"></div>
                     <div class="carousel-caption">
                         <a style="color: white" href="{{ path('calendrier') }}">
-                            <h1 class="super-heading">LE CALENDRIER COMPLET</h1>
-                            <h3>Le calendrier de votre équipe et tous les événements du club</h3>
+                            <h1 class="super-heading">CALENDRIER</h1>
+                            <h3>Le calendrier de votre équipe</h3>
                         </a>
 
                     </div>
@@ -163,7 +162,7 @@
                     <div class="carousel-caption">
 
                         <a style="color: white" href="{{ path('players') }}">
-                            <h1 class="super-heading">LES EFFECTIFS</h1>
+                            <h1 class="super-heading">EFFECTIFS</h1>
                             <h3 class="super-paragraph">L'effectif complet de votre club</h3>
                         </a>
 
@@ -173,7 +172,7 @@
                     <div class="overlay" style="opacity: 0.7"></div>
                     <div class="carousel-caption">
                         <a style="color: white" href="{{ path('media') }}">
-                            <h1 class="super-heading">LES MEDIAS</h1>
+                            <h1 class="super-heading">MEDIAS</h1>
                             <h3>Les photos et vidéos du club</h3>
                         </a>
                     </div>
