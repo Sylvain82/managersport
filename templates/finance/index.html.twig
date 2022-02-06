@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FinanceController!{% endblock %}
+
+{% block body %}
+    <style>
+        table {
+            margin-top: 80px;
+        }
+        .recette {
+            color: green;
+        }
+        .depense {
+            color: red;
+        }
+    </style>
+
+    <table class="table-bordered table table-dark">
+        <thead>
+        <th>Nom</th>
+        <th>Date</th>
+        <th>Catégorie</th>
+        <th>Commentaire</th>
+        <th>Montant</th>
+        </thead>
+
+        <tbody>
+        {% set somme = 0 %}
+
+
+        {% for finance in finances %}
+            {% set somme = somme + finance.montant %}
+            <tr>
+                <td>{{ finance.nom }} </td>
+                <td>{{ finance.date|date("m/d/Y") }}</td>
+                <td>{{ finance.categorie }} </td>
+                <td>{{ finance.justification }} </td>
+
+                {% if finance.recette %}
+
+                    <td class="recette">+{{ finance.montant / 100 }} € </td>
+                {% else %}
+                    <td class="depense">-{{ finance.montant / 100 }} € </td>
+
+                {% endif %}
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+
+    <table class="table table-dark">
+        <tbody>
+        <thead>
+        <th class=" m-3">SOLDE</th>
+        </thead>
+
+        {% if somme  < 0 %}
+            <td class="text-danger m-3">{{ somme / 100}} €</td>
+        {% else %}
+            <td class="text-success m-3">{{ somme / 100}} €</td>
+        {% endif %}
+
+        </tbody>
+    </table>
+
+{% endblock %}
