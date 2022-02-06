@@ -47,7 +47,6 @@
         "twig/extensions": "^1.5",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0",
-      "ext-couchbase": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
