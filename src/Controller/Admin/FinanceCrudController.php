@@ -37,11 +37,11 @@ class FinanceCrudController extends AbstractCrudController
             BooleanField::new('recette'),
             TextareaField::new('justification'),
             MoneyField::new('montant')->setCurrency('EUR'),
-            ImageField::new('facture')
-                ->setBasePath('img/')
-                ->setUploadDir('public/img/')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired('false'),
+//            ImageField::new('facture')
+//                ->setBasePath('img/')
+//                ->setUploadDir('public/img/')
+//                ->setUploadedFileNamePattern('[randomhash].[extension]')
+//                ->setRequired('false'),
 
         ];
     }
