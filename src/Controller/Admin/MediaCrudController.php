@@ -21,7 +21,7 @@ class MediaCrudController extends AbstractCrudController
     {
         return [
             TextField::new('titre'),
-            DateTimeField::new('date')->setFormat('D-M-Y H:m'),
+//            DateTimeField::new('date')->setFormat('D-M-Y H:m'),
             TextareaField::new('commentaire'),
             ImageField::new('photo')->setBasePath('img/')
                 ->setUploadDir('public/img/')

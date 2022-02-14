@@ -21,7 +21,7 @@ class FinanceCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            DateTimeField::new('date'),
+//            DateTimeField::new('date'),
             TextField::new('nom'),
             ChoiceField::new('categorie')
                 ->setChoices([

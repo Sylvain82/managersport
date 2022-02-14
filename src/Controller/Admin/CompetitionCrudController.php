@@ -3,15 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Competition;
-use Cassandra\Map;
-use Couchbase\BooleanFieldSearchQuery;
+
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
-use http\Url;
 
 
 class CompetitionCrudController extends AbstractCrudController
@@ -26,7 +23,7 @@ class CompetitionCrudController extends AbstractCrudController
     {
         return [
 
-            DateTimeField::new('heureBis'),
+//            DateTimeField::new('heureBis'),
             TextField::new('type'),
             TextField::new('stade'),
 //            UrlField::new('lieu'),
