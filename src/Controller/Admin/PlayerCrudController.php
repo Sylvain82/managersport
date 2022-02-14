@@ -4,12 +4,10 @@ namespace App\Controller\Admin;
 
 use App\Entity\Player;
 
-use Cassandra\Date;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
@@ -35,7 +33,6 @@ class PlayerCrudController extends AbstractCrudController
                     'Homme' => 'M',
                      'Femme' => 'F'
              ]]),
-             DateField::new('date_naissance'),
 //            DateTimeField::new('date_naissance')->setFormat('d-M-y'),
             SlugField::new('slug')->setTargetFieldName('name'),
             AssociationField::new('equipe'),
