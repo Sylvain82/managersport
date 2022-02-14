@@ -33,7 +33,7 @@ class PlayerCrudController extends AbstractCrudController
 //                    'Homme' => 'M',
 //                     'Femme' => 'F'
 //             ]]),
-            DateTimeField::new('date_naissance')->setFormat('d-M-y'),
+//            DateTimeField::new('date_naissance')->setFormat('d-M-y'),
             SlugField::new('slug')->setTargetFieldName('name'),
             AssociationField::new('equipe'),
             TelephoneField::new('phone'),
