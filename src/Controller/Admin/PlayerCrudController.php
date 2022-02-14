@@ -3,23 +3,17 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Player;
-use Doctrine\Common\Collections\Selectable;
-use Doctrine\ORM\Query\AST\SimpleSelectExpression;
-use Doctrine\ORM\Query\Expr\Select;
+
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\HiddenField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Validator\Constraints\Choice;
-use Symfony\Component\Validator\Constraints\Date;
+
 
 class PlayerCrudController extends AbstractCrudController
 {
@@ -34,11 +28,11 @@ class PlayerCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             TextField::new('firstname'),
-            ChoiceField::new('genre')->setChoices([
-                'Genre' => [
-                    'Homme' => 'M',
-                     'Femme' => 'F'
-             ]]),
+//            ChoiceField::new('genre')->setChoices([
+//                'Genre' => [
+//                    'Homme' => 'M',
+//                     'Femme' => 'F'
+//             ]]),
             DateTimeField::new('date_naissance')->setFormat('d-M-y'),
             SlugField::new('slug')->setTargetFieldName('name'),
             AssociationField::new('equipe'),
