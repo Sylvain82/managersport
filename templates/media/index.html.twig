@@ -3,19 +3,27 @@
 {% block title %}Hello MediaController!{% endblock %}
 
 {% block body %}
+
+    <style>
+        #mediabloc{
+            margin-top: 80px;
+        }
+
+    </style>
+<div id="mediabloc">
     {% for media in media %}
-<div class="col-md-4 mt-5 mb-3">
-    <div class="card mt-5">
-        <div class="card-image-wrapper">
+        <div class="col-md-4 mt-5 mb-3">
+            <div class="card mt-5">
+                <div class="card-image-wrapper">
 
-          <img src="/img/{{ media.photo }}" class="card-img-top img-fluid" alt="...">
-          <h2>{{ media.titre }}</h2>
-          <p>{{ media.commentaire }}</p>
-          <p>{{ media.date | date("d/m/Y") }}</p>
-      </div>
-  </div>
+                  <img src="/img/{{ media.photo }}" class="card-img-top img-fluid" alt="...">
+                  <h2>{{ media.titre }}</h2>
+                  <p>{{ media.commentaire }}</p>
+                  <p>{{ media.date | date("d/m/Y") }}</p>
+              </div>
+          </div>
 </div>
-
+</div>
     {% endfor %}
 
 {% endblock %}

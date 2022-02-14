@@ -36,6 +36,12 @@
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
             }
+
+        }
+        @media (max-width: 768px){
+        .nav-link.active a{
+            font-size: 30px;
+         }
         }
     </style>
 
@@ -60,8 +66,12 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+
+
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <ul class="navbar-nav me-auto text-center mb-2 mb-md-0">
+
 
                         {% if app.user %}
 
