@@ -4,13 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Player;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\Persistence\ObjectManager;
-use Faker\Factory;
-use Faker\Provider\DateTime;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Faker\Provider\fr_FR\PhoneNumber;
 
 class PlayerController extends AbstractController
 {

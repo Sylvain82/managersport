@@ -5,7 +5,6 @@ namespace App\Controller\Admin;
 use App\Entity\Competition;
 use App\Entity\Equipe;
 use App\Entity\Finance;
-use App\Entity\Financebis;
 use App\Entity\Media;
 use App\Entity\Player;
 use App\Entity\User;
