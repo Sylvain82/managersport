@@ -28,11 +28,11 @@ class PlayerCrudController extends AbstractCrudController
         return [
             TextField::new('name'),
             TextField::new('firstname'),
-//            ChoiceField::new('genre')->setChoices([
-//                'Genre' => [
-//                    'Homme' => 'M',
-//                     'Femme' => 'F'
-//             ]]),
+            ChoiceField::new('genre')->setChoices([
+                'Genre' => [
+                    'Homme' => 'M',
+                     'Femme' => 'F'
+             ]]),
 //            DateTimeField::new('date_naissance')->setFormat('d-M-y'),
             SlugField::new('slug')->setTargetFieldName('name'),
             AssociationField::new('equipe'),
