@@ -6,7 +6,7 @@
 
         <br>
         <br>
-        <table class="table mt-5 table-striped table-dark">
+        <table id="dtVerticalScrollExample" class="table  table-striped table-dark" >
             <thead>
             <tr>
                     <th></th>
@@ -17,29 +17,42 @@
 
                                 <th>
                                     {{ event.heureBis.format('d-m H:i') }}  {{ event.event }}
+
                                 </th>
+
                             {% endif %}
                     {% endfor %}
 
             </tr>
             </thead>
 
-                    {% for player in players %}
-                            {% if player.equipe == "TFC - Equipe PRO" %}
-                                <tr>
-                                    <td>{{ player.name }} {{ player.firstname }}</td>
-                                </tr>
+            <tbody>
 
-                              {% endif %}
-                    {% endfor %}
-                <tbody>
+                {% for player in players %}
+                                {% if player.equipe == "TFC - Equipe PRO" %}
+                                    <tr>
+                                        <th>{{ player.name }} {{ player.firstname }}</th>
+                                    {% for event in event %}
+                                        {% if event.equipe ==  "TFC - Equipe PRO" %}
 
-                <p>TEST</p>
+                                             <td>
+{#                                                <label for="presence"></label>#}
+{#                                                <select name="presence" id="presence" class="bg-dark">#}
+{#                                                    <option value="1">Oui</option>#}
+{#                                                    <option value="0">Non</option>#}
+{#                                                </select>#}
+                                                 <input type="checkbox" value="presence">
 
-                </tbody>
+                                            </td>
+                                        {% endif %}
+                                    {% endfor %}
 
+                                {% endif %}
+                                    </tr>
+                                <tr>Total</tr>
+                {% endfor %}
 
-
+            </tbody>
 
         </table>
 

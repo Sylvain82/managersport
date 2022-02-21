@@ -89,6 +89,11 @@ class Player
      */
     private $age;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $presence;
+
     public function __toString():string
     {
         return $this->equipe AND $this->dateNaissance;;
@@ -254,6 +259,18 @@ class Player
     public function setAge(?string $age): self
     {
         $this->age = $age;
+
+        return $this;
+    }
+
+    public function getPresence(): ?bool
+    {
+        return $this->presence;
+    }
+
+    public function setPresence(bool $presence): self
+    {
+        $this->presence = $presence;
 
         return $this;
     }

@@ -3,7 +3,12 @@
 {% block title %}Effectifs{% endblock %}
 
 {% block body %}
-
+    <style>
+        .titrejoueurs h1{
+            margin-top: 80px;
+        }
+    </style>
+    <div class="titrejoueurs">
  <h1 class="m-3">Effectif</h1>
 
     <table id="sortTable" class="table mt-5 table-striped table-dark table-responsive" data-toggle="table">
@@ -39,10 +44,6 @@
         {% endfor %}
 
     </table>
-
-    <script>
-        $('#sortTable').DataTable();
-    </script>
-
+</div>
 
 {% endblock %}

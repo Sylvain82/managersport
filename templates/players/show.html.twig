@@ -12,7 +12,8 @@
 
 <div class="bloc">
 
-    <p><a href="{{ path('players') }}" class="m-3">Retour</a></p>
+    <p class="text-center"><a href="{{ path('players') }}" class="btn btn-primary">Retour</a></p>
+
     <h1 class="m-1 text-center">{{ player.firstname }} {{ player.name }}</h1>
     <h2 class="text-center">{{ age }} ans </h2>
     <div class="container d-flex justify-content-center">
@@ -23,7 +24,8 @@
 
                         {% if player.photo %}
 
-                            <img src="/img/{{ player.photo }}" class="card-img-top img-fluid" alt="...">
+{#                            <img src="/img/{{ player.photo }}" class="card-img-top img-fluid" alt="...">#}
+                            <img src="{{ player.photo }}" class="card-img-top img-fluid" alt="...">
 
                         {% else %}
 
