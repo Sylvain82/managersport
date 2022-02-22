@@ -26,6 +26,8 @@ class CompetitionCrudController extends AbstractCrudController
 
             DateTimeField::new('heureBis'),
             TextField::new('type'),
+            TextField::new('event'),
+            BooleanField::new('domicile'),
             TextField::new('stade'),
             UrlField::new('lieu'),
             TextField::new('carte'),
@@ -33,7 +35,6 @@ class CompetitionCrudController extends AbstractCrudController
             TextField::new('adversaire'),
             TextField::new('score'),
             AssociationField::new('equipe'),
-
         ];
     }
 
