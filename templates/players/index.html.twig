@@ -33,7 +33,7 @@
                 <td>{{ player.licence }}</td>
                 <td>{{ player.equipe }}</td>
 
-                <td><a href="{{ path('player',  {'slug': player.slug} ) }}" class="btn btn-primary">Fiche</a></td>
+                <td><a href="{{ path('player',  {'licence': player.licence} ) }}" class="btn btn-primary">Fiche</a></td>
 
             </tr>
         {% else %}

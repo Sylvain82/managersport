@@ -50,10 +50,10 @@ class PlayerController extends AbstractController
     }
 
 
-    #[Route('/joueur/{slug}', name: 'player')]
-    public function show($slug): Response
+    #[Route('/joueur/{licence}', name: 'player')]
+    public function show($licence): Response
     {
-        $player = $this->entityManager->getRepository(Player::class)->findOneBySlug($slug);
+        $player = $this->entityManager->getRepository(Player::class)->findOneByLicence($licence);
 
         $dateNaissance = $player->getDateNaissance($player)->Format("y-m-d");
         $aujourdhui = date("Y-m-d");
