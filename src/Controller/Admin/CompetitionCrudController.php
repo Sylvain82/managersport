@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
 
 
 class CompetitionCrudController extends AbstractCrudController
@@ -23,11 +24,11 @@ class CompetitionCrudController extends AbstractCrudController
     {
         return [
 
-//            DateTimeField::new('heureBis'),
+            DateTimeField::new('heureBis'),
             TextField::new('type'),
             TextField::new('stade'),
-//            UrlField::new('lieu'),
-//            TextField::new('carte'),
+            UrlField::new('lieu'),
+            TextField::new('carte'),
             BooleanField::new('afficher'),
             TextField::new('adversaire'),
             TextField::new('score'),

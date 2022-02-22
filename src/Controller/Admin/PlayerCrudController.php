@@ -6,6 +6,8 @@ use App\Entity\Player;
 
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
@@ -27,11 +29,11 @@ class PlayerCrudController extends AbstractCrudController
             TextField::new('name'),
             TextField::new('firstname'),
 
-//            ChoiceField::new('genre')->setChoices([
-//                'Genre' => [
-//                    'Homme' => 'M',
-//                     'Femme' => 'F'
-//            ]]),
+            ChoiceField::new('genre')->setChoices([
+                'Genre' => [
+                    'Homme' => 'M',
+                     'Femme' => 'F'
+            ]]),
 
             SlugField::new('slug')->setTargetFieldName('name'),
             AssociationField::new('equipe'),
@@ -45,7 +47,7 @@ class PlayerCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired('false'),
             TextField::new('adressePostale'),
-//          DateTimeField::new('date_naissance')->setFormat('d-M-y'),
+          DateTimeField::new('date_naissance')->setFormat('d-M-y'),
         ];
     }
 }
