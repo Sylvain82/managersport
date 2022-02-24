@@ -47,7 +47,7 @@ class PlayerCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired('false'),
             TextField::new('adressePostale'),
-          DateTimeField::new('date_naissance')->setFormat('d-M-y'),
+//          DateTimeField::new('date_naissance')->setFormat('d-M-y'),
         ];
     }
 }
