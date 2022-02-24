@@ -24,7 +24,7 @@ class CompetitionCrudController extends AbstractCrudController
     {
         return [
 
-            DateTimeField::new('heure_bis'),
+//            DateTimeField::new('heure_bis'),
             TextField::new('type'),
             TextField::new('event'),
             BooleanField::new('domicile'),
