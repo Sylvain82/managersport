@@ -40,7 +40,6 @@ class EquipeController extends AbstractController
 
         return $this->render('equipe/show.html.twig',[
             'selection' => $selection
-
         ]);
     }
 

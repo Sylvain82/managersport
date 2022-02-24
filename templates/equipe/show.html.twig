@@ -20,7 +20,7 @@ p<div class="container mt-5">
                     <td>{{ selection.name}}</td>
                     <td>{{ selection.firstname }}</td>
                     <td>{{ selection.position }}</td>
-                    <td> <a href="{{ path('player',  {'slug': selection.slug} ) }}">Détails</a></td>
+                    <td> <a href="{{ path('player',  {'licence': selection.licence} ) }}">Détails</a></td>
                 </tr>
             {% else %}
                 <tr>
